@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="title">
+            <h1>{{'vehicles.view.update' | translate}}</h1>
+            <hr/>
+        </div>
+    </div>
+</div>
+
+<form class="form-horizontal" role="form" ng-submit="ctrl.onSaveSubmit()">
+    <div ng-include="'js/app/vehicles/form.tpl.html'"></div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="btn-group pull-right btn-toolbar">
+                <button type="submit" class="btn btn-success" title="" tabindex="8">{{'buttons.save' | translate}}</button>
+                <a href="#/vehicles" class="btn btn-primary" title="" tabindex="9">{{'buttons.back' | translate}}</a>
+            </div>
+        </div>
+    </div>
+</form>

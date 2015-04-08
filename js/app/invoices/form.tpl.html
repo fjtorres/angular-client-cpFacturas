@@ -1,0 +1,133 @@
+<div class="row">
+    
+    <div class="col-sm-6" ng-show="ctrl.entity.vehicle.id == null">
+    
+    	<div class="form-group">
+            <label for="txtInvoiceVehicle" class="control-label col-sm-3">{{'invoices.field.vehicle' | translate}}</label>
+            <div class="col-sm-5">
+            	<div class="input-group">
+	                <input autocomplete='off' type="text" class="form-control" id="txtInvoiceVehicle" placeholder="{{'invoices.field.vehicle.placeholder' | translate}}"
+	                    maxlenght="25" ng-model="ctrl.vehicleAutocomplete" ng-disabled="isUpdate" required tabindex="1"
+	                    typeahead="item as item.registration + ' (' + item.model.brand.name + ' - ' + item.model.name + ')' for item in ctrl.getVehicles($viewValue)"
+	                    typeahead-min-length="2"
+	                    typeahead-loading="loadingVehicles"
+	                    typeahead-on-select="ctrl.onSelectVehicle($item, $model, $label)" />
+	                <span class="input-group-addon" ng-show="loadingVehicles"><i class="glyphicon glyphicon-refresh"></i></span>
+	                <span class="input-group-addon" ng-show="!loadingVehicles"><i class="fa fa-plus"></i></span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="clearfix" />
+    
+    <!-- Vehicle anel -->
+	<div class="col-sm-6" ng-show="ctrl.entity.vehicle.id != null">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">{{'invoices.text.vehicle' | translate}}</h4>
+			</div>
+			<div class="panel-body">
+				<div>
+					<strong>{{'vehicles.field.registration' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.registration}}</span>
+				</div>
+				<div>
+					<strong>{{'vehicles.field.model' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.model.name}}</span>
+				</div>
+				<div>
+					<strong>{{'vehicles.field.brand' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.model.brand.name}}</span>
+				</div>
+				<div>
+					<strong>{{'vehicles.field.year' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.year}}</span>
+				</div>
+				<div>
+					<strong>{{'vehicles.field.fuelType' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.fuelType}}</span>
+				</div>
+				<div>
+					<strong>{{'vehicles.field.doors' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.doors}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+    <!-- Customer panel -->
+	<div class="col-sm-6" ng-show="ctrl.entity.vehicle.id != null">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">{{'invoices.text.customer' | translate}}</h4>
+			</div>
+			<div class="panel-body">
+				<div>
+					<strong>{{'customers.field.code' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.customer.code}}</span>
+				</div>
+				<div>
+					<strong>{{'customers.field.firstName' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.customer.firstName}}</span>
+				</div>
+				<div>
+					<strong>{{'customers.field.lastName' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.customer.lastName}}</span>
+				</div>
+				<div>
+					<strong>{{'customers.field.phonenumber' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.customer.contactData.primaryPhoneNumber}}</span>
+				</div>
+				<div>
+					<strong>{{'customers.field.email' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.customer.contactData.email}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-sm-12" ng-show="ctrl.entity.vehicle.id != null">
+		<div class="btn-group pull-right btn-toolbar">
+             <button type="button" class="btn btn-danger" title="{{'invoices.buttons.selectVehicle' | translate}}" tabindex="1" ng-click="ctrl.onClearVehicleClick()">{{'invoices.buttons.selectVehicle' | translate}}</button>
+         </div>
+	</div>
+	
+</div>
+
+<div class="row">
+    
+	<div class="col-sm-12">
+        <div class="btn-group pull-right btn-toolbar" role="group">
+            <a href="#" onclick="return false;" class="btn btn-default btn-sm" title="{{'invoices.buttons.add.line' | translate}}" ng-click="ctrl.linesGrid.onNewLineClick()" tabindex="2">
+                <i class="fa fa-plus"></i>
+            </a>
+        </div>
+    </div>
+    
+    <div class="col-sm-12">
+
+        <div class="table-responsive">
+            
+            <table class="table table-striped table-bordered table-hover" id="invoice-lines-list">
+                <thead>
+                    <th>{{'invocesLine.field.description' | translate}} <span class="dropup"><span class="caret"></span></span></th>
+                    <th>{{'invocesLine.field.amount' | translate}} <span class="caret"></span></th>
+                    <th>{{'invocesLine.field.price' | translate}} <span class="caret"></span></th>
+                    <th>{{'invocesLine.field.taxRate' | translate}} <span class="caret"></span></th>
+                    <th>{{'invocesLine.field.discount' | translate}} <span class="caret"></span></th>
+                    <th style="width: 90px;"></th>
+                </thead>
+                <tbody>
+                   <tr ng-repeat="item in ctrl.entity.lines">
+                        <td>{{item.description}}</td>
+                        <td>{{item.amount}}</td>
+                        <td>{{item.price}}</td>
+                        <td>{{item.taxRate}}</td>
+                        <td>{{item.discount}}</td>
+						<td>
+                            <div class="text-center">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-primary btn-xs" title="" ng-click="ctrl.linesGrid.onUpdateLineClick(item)" onclick="return false;"><i class="fa fa-pencil"></i></a>
+                                    <a href="#" class="btn btn-danger btn-xs" title="" ng-click="ctrl.linesGrid.onConfirmDeleteClick(item)" onclick="return false;"><i class="fa fa-remove"></i></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+    
+</div>

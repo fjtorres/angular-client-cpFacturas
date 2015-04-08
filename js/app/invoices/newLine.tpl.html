@@ -1,0 +1,33 @@
+<form role="form" ng-submit="modalCtrl.onSubmit()">
+<div class="modal-header">
+    <h3 class="modal-title">{{'invocesLine.views.modal' | translate}}</h3>
+</div>
+<div class="modal-body">
+    	<div class="form-group">
+			<label for="txtLineDescription">{{'invocesLine.field.description' | translate}}</label>
+			<input type="input" class="form-control" id="txtLineDescription" placeholder="{{'invocesLine.field.description.placeholder' | translate}}"
+				ng-model="modalCtrl.entity.description" required />
+		</div>
+		<div class="form-group">
+			<label for="txtLineAmount">{{'invocesLine.field.amount' | translate}}</label>
+			<input type="number" max="99999" min="0" pattern="[0-9]+([\.|,][0-9]+)?" class="form-control" id="txtLineAmount" placeholder="{{'invocesLine.field.amount.placeholder' | translate}}"
+			 	ng-model="modalCtrl.entity.amount" required />
+		</div>
+		<div class="form-group">
+			<label for="txtLinePrice">{{'invocesLine.field.price' | translate}}</label>
+			<input type="number" max="99999" min="0" pattern="[0-9]+([\.|,][0-9]+)?" class="form-control" id="txtLinePrice" placeholder="{{'invocesLine.field.price.placeholder' | translate}}"
+				ng-model="modalCtrl.entity.price" required />
+		</div>
+		<div class="form-group">
+			<label for="txtLineDiscount">{{'invocesLine.field.discount' | translate}}</label>
+			<input type="number" max="100" min="0" pattern="[0-9]+([\.|,][0-9]+)?" class="form-control" id="txtLineDiscount" placeholder="{{'invocesLine.field.discount.placeholder' | translate}}"
+				ng-model="modalCtrl.entity.discount" />
+		</div>
+    
+</div>
+<div class="modal-footer">
+    <input type="submit" class="btn btn-success" value="{{'buttons.add' | translate}}" />
+    <button class="btn btn-default" ng-click="modalCtrl.onCancelClick()">{{'buttons.cancel' | translate}}</button>
+</div>
+
+</form>

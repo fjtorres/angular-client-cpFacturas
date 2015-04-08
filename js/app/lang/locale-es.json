@@ -1,0 +1,221 @@
+{
+  "app": {
+    "title": "C&P Facturas"
+  },
+  "lang": {
+    "title": "Idiomas",
+    "selector": "Selector de idiomas",
+    "spanish": "Español",
+    "english": "Ingles"
+  },
+  "buttons": {
+    "access": "Acceder",
+    "add": "Añadir",
+    "back": "Volver",
+    "cancel": "Cancelar",
+    "clear": "Limpiar",
+    "logout": "Salir",
+    "no" : "No",
+    "save": "Guardar",
+    "yes" : "Si"
+  },
+  "messages" : {
+  	"loader": "Cargando ...",
+    "select": "Seleccionar...",
+    "confirmation" : {
+      "title" : "Confirmar operación"
+    }
+  },
+  "login" : {
+    "title" : "Acceder al sistema",
+    "username" : "Introduzca el nombre de usuario",
+    "password" : "Introduzca la contraseña",
+    "rememberMe": "Recordar mis datos en este ordenador"
+  },
+  "menu": {
+    "invoice": {
+      "title": "Facturas",
+      "create": "Nueva",
+      "list": "Listado",
+      "lastMonthReport" : "Facturación del último mes"
+    },
+    "customer": {
+      "title": "Clientes",
+      "create": "Nuevo",
+      "list": "Listado"
+    },
+    "company": {
+      "title": "Empresas",
+      "create": "Nueva",
+      "list": "Listado"
+    },
+    "vehicle": {
+      "title": "Vehiculos",
+      "create": "Nuevo",
+      "list": "Listado"
+    },
+    "logout" : "Salir del sistema",
+    "username" : "Usuario" 
+  },
+  "home": {
+  	"newInvoice": {
+  		"title": "Nueva factura",
+  		"description": "Creación de una nueva factura en el sistema."
+  	},
+  	"invoicesList": {
+  		"title": "Facturas",
+  		"description": "Muestra el listado de facturas"
+  	},
+  	"customersList": {
+  		"title": "Clientes",
+  		"description": "Muestra el listado de clientes"
+  	},
+  	"insurersList": {
+  		"title": "Aseguradoras",
+  		"description": "Muestra el listado de aseguradoras"
+  	},
+  	 "vehiclesList": {
+  		"title": "Vehículos",
+  		"description": "Muestra el listado de vehículos"
+  	},
+  	"configuration": {
+  		"title": "Configuración",
+  		"description": "Permite configurar la información del sistema"
+  	}
+  },
+  "customers": {
+    "view": {
+      "list": "Listado de clientes",
+      "create": "Nuevo cliente",
+      "update": "Modificación datos del cliente"
+    },
+    "field": {
+      "code": "Código",
+      "code.placeholder": "Introduzca el código",
+      "firstName": "Nombre",
+      "firstName.placeholder": "Introduzca el nombre",
+      "lastName": "Apellidos",
+      "lastName.placeholder": "Introduzca los apellidos",
+      "email": "Correo electrónico",
+      "email.placeholder": "Introduzca el email",
+      "phonenumber": "Teléfono",
+      "phonenumber.placeholder": "Introduzca el número de teléfono"
+    },
+    "messages" : {
+      "delete": {
+        "confirmation" : "¿Esta seguro de eliminar el cliente seleccionado?",
+        "success": "Se ha eliminado correctamente el cliente."
+      },
+      "create": {
+        "success": "Se ha creado correctamente el cliente."
+      },
+      "update": {
+        "success": "Se han actualizado correctamente los datos del cliente."
+      }
+    }
+  },
+  "companies": {
+    "view": {
+      "list": "Listado de empresas",
+      "create": "Nueva empresa",
+      "update": "Modificación datos de la empresa"
+    },
+    "field": {}
+  },
+  "vehicles": {
+    "view": {
+      "list": "Listado de vehículos",
+      "create": "Nuevo vehículo",
+      "update": "Modificación datos del vehículo"
+    },
+    "field": {
+      "registration": "Matrícula",
+      "registration.placeholder": "Introduzca la matrícula",
+      "customer": "Cliente",
+      "brand": "Marca",
+      "model": "Modelo",
+      "year": "Año",
+      "doors": "Nº de puertas",
+      "fuelType": "Tipo de combustible"
+    },
+    "messages": {
+      "delete": {
+        "confirmation": "¿Esta seguro de eliminar el vehículo seleccionado?",
+        "success": "Se ha eliminado correctamente el vehículo."
+      },
+      "create": {
+        "success": "Se ha creado correctamente el vehículo."
+      },
+      "update": {
+        "success": "Se han actualizado correctamente los datos del vehículo."
+      },
+      "groupBy": {
+        "general": "General",
+        "others": "Otros"
+      }
+    }
+  },
+  "invoices" : {
+  	"view": {
+      "list": "Listado de facturas",
+      "create": "Nueva factura",
+      "update": "Modificación datos de la factura"
+  	},
+  	"field": {
+      "vehicle": "Vehículo",
+      "vehicle.placeholder": "Introduzca la matrícula del vehículo.",
+      "lines": "Líneas de factura"
+  	},
+    "messages": {
+      "delete": {
+        "confirmation": "¿Esta seguro de eliminar la factura seleccionada?",
+        "success": "Se ha eliminado correctamente la factura."
+      },
+      "create": {
+        "success": "Se ha creado correctamente la factura."
+      },
+      "update": {
+        "success": "Se han actualizado correctamente los datos de la factura."
+      }
+    },
+    "buttons": {
+      "add": "Crear nueva factura",
+      "delete": "Eliminar factura",
+      "update": "Actualizar factura",
+      "selectVehicle": "Seleccionar otro vehículo",
+      "add.line": "Añadir línea a la factura"
+    },
+    "text": {
+      "vehicle": "Datos del vehículo",
+      "customer": "Datos del propietario"
+    }
+  },
+  "invocesLine": {
+    "views": {
+      "modal": "Datos de la línea"
+    },
+    "field": {
+      "description": "Descripción",
+      "description.placeholder": "Introduzca la descripción de la línea de factura.",
+      "amount": "Cantidad",
+      "amount.placeholder": "Introduzca la cantidad.",
+      "price": "Precio",
+      "price.placeholder": "Introduzca el precio",
+      "taxRate": "IVA",
+      "discount": "Descuento",
+      "discount.placeholder": "Introduzca el descuento"
+    },
+    "messages": {
+      "delete": {
+        "confirmation": "¿Esta seguro de eliminar la línea de factura seleccionada?",
+        "success": "Se ha eliminado correctamente la línea de factura."
+      },
+      "create": {
+        "success": "Se ha creado correctamente la línea factura."
+      },
+      "update": {
+        "success": "Se han actualizado correctamente los datos de la línea de factura."
+      }
+    }
+  }
+}

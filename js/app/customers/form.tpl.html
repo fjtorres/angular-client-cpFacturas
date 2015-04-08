@@ -1,0 +1,64 @@
+<input type="hidden" ng-model="ctrl.entity.id" />
+<input type="hidden" ng-model="ctrl.entity.type" />
+
+<div class="row">
+    
+    <div class="col-sm-6">
+
+        <div class="form-group form-group-sm">
+            <label for="txtCustomerCode" class="control-label col-sm-3">{{'customers.field.code' | translate}}</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control col-sm-3" id="txtCustomerCode" placeholder="{{'customers.field.code.placeholder' | translate}}"
+                    maxlenght="20" ng-model="ctrl.entity.code" ng-disabled="ctrl.isUpdate" required tabindex="1" ng-model-options="{ updateOn: 'submit' }"/>
+            </div>
+        </div>
+
+    </div>
+    <div class="clearfix" />
+
+    <div class="col-sm-6">
+
+        <div class="form-group form-group-sm">
+            <label for="txtCustomerFirstName" class="control-label col-sm-3">{{'customers.field.firstName' | translate}}</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="txtCustomerFirstName" placeholder="{{'customers.field.firstName.placeholder' | translate}}"
+                    maxlenght="100" ng-model="ctrl.entity.firstName" required tabindex="2" ng-model-options="{ updateOn: 'submit' }"/>
+            </div>
+        </div>
+
+        <div class="form-group form-group-sm">
+            <label for="txtCustomerLastName" class="control-label col-sm-3">{{'customers.field.lastName' | translate}}</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="txtCustomerLastName" placeholder="{{'customers.field.lastName.placeholder' | translate}}"
+                    maxlenght="100" ng-model="ctrl.entity.lastName" required tabindex="3" ng-model-options="{ updateOn: 'submit' }"/>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-sm-6">
+
+        <div class="form-group form-group-sm">
+            <label for="txtCustomerEmail" class="control-label col-sm-3">{{'customers.field.email' | translate}}</label>
+            <div class="col-sm-9">
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <input type="email" class="form-control" id="txtCustomerEmail" placeholder="{{'customers.field.email.placeholder' | translate}}"
+                        maxlenght="100" ng-model="ctrl.entity.contactData.email" required tabindex="4" ng-model-options="{ updateOn: 'submit' }"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group form-group-sm">
+            <label for="txtCustomerPhoneNumber" class="control-label col-sm-3">{{'customers.field.phonenumber' | translate}}</label>
+            <div class="col-sm-9">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                    <input type="tel" class="form-control" id="txtCustomerPhoneNumber" placeholder="{{'customers.field.phonenumber.placeholder' | translate}}"
+                        maxlenght="12" ng-model="ctrl.entity.contactData.primaryPhoneNumber" required tabindex="5" ng-model-options="{ updateOn: 'submit' }"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
