@@ -1,0 +1,53 @@
+<div class="row">
+	<div class="col-sm-12">
+        <div class="title">
+            <h1>{{'invoices.view.list' | translate}}</h1>
+            <hr/>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="btn-group pull-right btn-toolbar" role="group">
+            <a href="#/invoices/create" class="btn btn-default btn-sm" title="{{'invoices.buttons.add' | translate}}">
+                <i class="fa fa-plus"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover" id="invoice-list">
+                <thead>
+                    <th>{{'invoices.field.vehicle' | translate}} <span class="dropup"><span class="caret"></span></span></th>
+                    <th>{{'invoices.field.customer' | translate}} <span class="caret"></span></th>
+                    <th>{{'invoices.field.customerType' | translate}} <span class="caret"></span></th>
+                    <th style="width: 90px;"></th>
+                </thead>
+                <tbody>
+                   <tr ng-repeat="item in ctrl.items">
+                        <td>{{item.vehicle.registration}}</td>
+                        <td>{{item.vehicle.customer.firstName}}</td>
+                        <td>{{item.vehicle.customer.type}}</td>
+						<td>
+                            <div class="text-center">
+                                <div class="btn-group">
+                                	<a href="#" class="btn btn-primary btn-xs" title="" ng-click="ctrl.onExportClick(item)" onclick="return false;"><i class="fa fa-print"></i></a>
+                                    <a href="#/invoices/update/{{item.id}}" class="btn btn-primary btn-xs" title=""><i class="fa fa-pencil"></i></a>
+                                    <a href="#" class="btn btn-danger btn-xs" title="" ng-click="ctrl.onConfirmDeleteClick(item)" onclick="return false;"><i class="fa fa-remove"></i></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <pagination total-items="ctrl.totalItems" ng-model="ctrl.currentPage" items-per-page="ctrl.itemsPerPage" ng-change="ctrl.onPageChanged()" 
+			boundary-links="true" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" />
+    </div>
+</div>

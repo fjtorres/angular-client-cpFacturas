@@ -1,0 +1,50 @@
+<input type="hidden" ng-model="ctrl.entity.id" />
+
+<div class="row">
+
+    <div class="col-sm-6">
+    
+		<div class="form-group form-group-sm">
+            <label for="txtInsurerCode" class="control-label col-sm-3">{{'insurers.field.code' | translate}}</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control col-sm-3" id="txtInsurerCode" placeholder="{{'insurers.field.code.placeholder' | translate}}"
+                    maxlenght="20" ng-model="ctrl.entity.code" ng-disabled="ctrl.isUpdate" required tabindex="1" ng-model-options="{ updateOn: 'submit' }"/>
+            </div>
+        </div>
+
+        <div class="form-group form-group-sm">
+            <label for="txtInsurerName" class="control-label col-sm-3">{{'insurers.field.name' | translate}}</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="txtInsurerName" placeholder="{{'insurers.field.name.placeholder' | translate}}"
+                    maxlenght="100" ng-model="ctrl.entity.name" required tabindex="2" ng-model-options="{ updateOn: 'submit' }"/>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-sm-6">
+
+        <div class="form-group form-group-sm">
+            <label for="txtInsurerEmail" class="control-label col-sm-3">{{'insurers.field.email' | translate}}</label>
+            <div class="col-sm-9">
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <input type="email" class="form-control" id="txtInsurerEmail" placeholder="{{'insurers.field.email.placeholder' | translate}}"
+                        maxlenght="100" ng-model="ctrl.entity.contactData.email" required tabindex="4" ng-model-options="{ updateOn: 'submit' }"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group form-group-sm">
+            <label for="txtInsurerNumber" class="control-label col-sm-3">{{'insurers.field.phonenumber' | translate}}</label>
+            <div class="col-sm-9">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                    <input type="tel" class="form-control" id="txtInsurerNumber" placeholder="{{'insurers.field.phonenumber.placeholder' | translate}}"
+                        maxlenght="12" ng-model="ctrl.entity.contactData.primaryPhoneNumber" required tabindex="5" ng-model-options="{ updateOn: 'submit' }"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

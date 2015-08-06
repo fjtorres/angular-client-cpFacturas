@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-header">
+            <h1>{{'customers.view.list' | translate}}</h1>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="btn-group pull-right btn-toolbar" role="group">
+            <a href="#/customers/create" class="btn btn-default btn-sm" title="" ng-click="create()">
+                <i class="fa fa-plus"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+    
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover table-condensed" id="customer-list">
+                <thead>
+                    <th>{{'customers.field.firstName' | translate}} <span class="dropup"><span class="caret"></span></span></th>
+                    <th>{{'customers.field.lastName' | translate}} <span class="caret"></span></th>
+                    <th>{{'customers.field.email' | translate}}<span class="caret"></span></th>
+                    <th style="width: 90px;"></th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in ctrl.items">
+                        <td>{{item.firstName}}</td>
+                        <td>{{item.lastName}}</td>
+                        <td>{{item.contactData.email}}</td>
+                        <td>
+                            <div class="text-center">
+                                <div class="btn-group">
+                                    <a href="#/customers/update/{{item.id}}" class="btn btn-primary btn-xs" title=""><i class="fa fa-pencil"></i></a>
+                                    <a href="#" class="btn btn-danger btn-xs" title="" ng-click="ctrl.onConfirmDeleteClick(item)" onclick="return false;"><i class="fa fa-remove"></i></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+		<pagination total-items="ctrl.totalItems" ng-model="ctrl.currentPage" items-per-page="ctrl.itemsPerPage" ng-change="ctrl.onPageChanged()" 
+			boundary-links="true" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" />
+    </div>
+</div>
