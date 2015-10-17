@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="es" ng-app="cpFacturasApp">
+<html lang="es" data-ng-app="cpFacturasApp">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title ng-bind="appTitle + ' - v' + appVersion"></title>
+    <title data-ng-bind="appTitle + ' - v' + appVersion"></title>
 	<link rel="stylesheet" href="webjars/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="webjars/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="webjars/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="webjars/flag-icon-css/0.7.1/css/flag-icon.min.css">
 	<link rel="stylesheet" href="css/angular-app.css">
-    <link rel="stylesheet" href="css/app.css">
 	<style type="text/css">
 		.ng-cloack {
 			display: none;
@@ -19,20 +18,19 @@
 	</style>
 </head>
 <body>
-	<div ng-cloak class="ng-cloak">
-
-	    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-if="loggedInUser" ng-include="'js/app/main/navbar.tpl.html'"></nav>
+	<div>
+	    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" data-ng-if="loggedInUser" data-ng-include="'js/app/main/navbar.tpl.html'"></nav>
 	
 	    <div class="content">
 	        
 	        <div class="container-fluid">
 	            <div class="row">
-	                <div class="col-sm-12" ng-include="'js/app/main/messages.tpl.html'"></div>
+	                <div class="col-sm-12" data-ng-include="'js/app/main/messages.tpl.html'"></div>
 	            </div>
 	        </div>  
 	
 	        <div class="container-fluid">
-	        	<div class="slide" ng-view></div>
+	        	<div class="slide" data-ng-view data-ng-cloak></div>
 	        </div>
 	
 	    </div>
@@ -43,18 +41,7 @@
 	<!-- 		</div> -->
 	<!-- 	</div> -->
 	</div>
-	
-	<!-- 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-cookies.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-animate.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular-resource.min.js"></script>
-    <script src="http://rawgit.com/angular-translate/bower-angular-translate/master/angular-translate.min.js"></script>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-     -->
      <script src="js/angular-bootstrap.js"></script>
      <script src="http://rawgit.com/angular-translate/bower-angular-translate-loader-static-files/master/angular-translate-loader-static-files.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -66,44 +53,6 @@
     <script src="js/ui-bootstrap-tpls-0.12.1.min.js"></script>
 
 	<script src="js/angular-app.js"></script>
-<!--     APP Module -->
-<!--     <script src="js/app/app.js"></script> -->
-<!--     <script src="js/app/app.run.js"></script> -->
-<!--     <script src="js/app/generic/genericService.js"></script> -->
-<!--     <script src="js/app/generic/enumService.js"></script> -->
-
-<!--     Main module -->
-<!--     <script src="js/app/main/menuController.js"></script> -->
-<!--     <script src="js/app/main/mainController.js"></script> -->
-<!--     <script src="js/app/main/messagesController.js"></script> -->
-<!--     <script src="js/app/main/confirmController.js"></script> -->
-
-<!--     Customer module -->
-<!--     <script src="js/app/customers/customersService.js"></script> -->
-<!--     <script src="js/app/customers/customerListController.js"></script> -->
-<!--     <script src="js/app/customers/customerController.js"></script> -->
-
-<!--     Invoice module -->
-<!--     <script src="js/app/invoices/invoiceService.js"></script> -->
-<!--     <script src="js/app/invoices/invoiceController.js"></script>     -->
-<!--     <script src="js/app/invoices/invoiceListController.js"></script> -->
-<!--     <script src="js/app/invoices/modalInvoiceLineController.js"></script> -->
-    
-<!--     Insure module -->
-<!--     <script src="js/app/insurers/insurerService.js"></script> -->
-<!--     <script src="js/app/insurers/insurerController.js"></script> -->
-<!--     <script src="js/app/insurers/insurerListController.js"></script> -->
-    
-<!--     Vehicle module -->
-<!--     <script src="js/app/vehicles/vehiclesService.js"></script> -->
-<!--     <script src="js/app/vehicles/vehicleListController.js"></script> -->
-<!--     <script src="js/app/vehicles/vehicleController.js"></script> -->
-    
-<!--     Administration module -->
-<!--     <script src="js/app/admin/loginController.js"></script> -->
-<!--     <script src="js/app/admin/userController.js"></script> -->
-<!--     <script src="js/app/admin/userService.js"></script> -->
-<!--     <script src="js/app/admin/authenticationService.js"></script> -->
 
 </body>
 </html>

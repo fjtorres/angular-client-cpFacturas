@@ -1,0 +1,96 @@
+/* Vars */
+@border-radiux: 5px;
+@faBaseSize: 2em;
+@shorcutHover: #e8e8e8;
+
+/* Mixing */
+.border-radius (@radius: 3px) {
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+    border-radius: @radius;
+}
+
+/* Generic CSS */
+
+.content { padding: 50px 0; }
+.message .alert {margin-top: 10px;}
+.btn-toolbar { margin-top: 5px; margin-bottom: 5px; }
+
+/* Font Awesome */
+.fa-2 { font-size: @faBaseSize; }
+.fa-3 { font-size: @faBaseSize*2; }
+.fa-4 { font-size: @faBaseSize*3; }
+.fa-5 { font-size: @faBaseSize*6; }
+.fa-6 { font-size: @faBaseSize*10; }
+
+/* Shorcuts */
+.shortcut-start-row {
+	margin-top: 5em;
+}
+
+.shortcut-row {
+	margin-bottom: 10px;
+}
+
+.shortcut-item {
+	padding: 0.5em;
+	cursor: pointer;
+	max-width: 250px;
+	margin: auto;
+	.border-radius(@border-radiux);
+	
+	&:hover {
+		background-color: @shorcutHover;
+	}
+	
+	h5 { font-weight: bold; }
+	p { font-style: italic; }
+}
+
+/* Login page */
+.login-title {
+	margin-bottom: 0px;
+    margin-top: 0px;
+    font-weight: bold;
+}
+
+.input-login {
+	margin-bottom: 15px;
+}
+
+.password-login {
+	padding-left: 14px;
+}
+
+/* Menu */
+.navbar-text a {
+	text-decoration: none;
+	color: #777;
+}
+
+.navbar-text a:hover {
+	color: #333;
+}
+
+.navbar-user {
+	margin-right: 5px;
+}
+
+
+/* Override bootstrap styles */
+.table {
+	margin-bottom: 0px;
+}
+
+.page-header {
+	margin: 20px 0 5px;
+}
+
+.table-responsive {
+	margin-bottom: 0px;
+}
+
+/* Invoice styles */
+.invoice-panel-body {
+	min-height: 160px;
+}

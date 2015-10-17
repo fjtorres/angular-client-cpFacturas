@@ -32,7 +32,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="item in ctrl.items">
+                    <tr data-ng-repeat="item in ctrl.items">
                         <td>{{item.registration}}</td>
                         <td>{{item.customer.firstName + ' ' + item.customer.lastName}}</td>
                         <td>{{item.model.brand.name}}</td>

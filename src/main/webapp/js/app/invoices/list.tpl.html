@@ -34,7 +34,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                   <tr ng-repeat="item in ctrl.items">
+                   <tr data-ng-repeat="item in ctrl.items">
                         <td>{{item.vehicle.registration}} - {{item.vehicle.model.name}} ({{item.vehicle.model.brand.name}})</td>
                         <td>{{item.vehicle.customer.lastName != null? item.vehicle.customer.firstName + ' ' + item.vehicle.customer.lastName: item.vehicle.customer.firstName }} ({{ 'messages.enum.customerType.' + item.vehicle.customer.type | translate}})</td>
                         <td>{{'messages.enum.invoiceState.' + item.state | translate}}</td>
