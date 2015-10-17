@@ -20,11 +20,37 @@
     "yes" : "Si"
   },
   "messages" : {
-  	"loader": "Cargando ...",
-    "select": "Seleccionar...",
     "confirmation" : {
       "title" : "Confirmar operación"
-    }
+    },
+    "creationDate": "F. Creación",
+	"email": "Correo electrónico",
+	"email.placeholder": "Introduzca el email",
+	"empty.result": "No se han encontrado resultados",
+	"enum": {
+		"customerType": {
+	      	"PERSON": "Particular",
+	      	"COMPANY": "Empresa"
+		},
+		"fuelType": {
+			"Diesel": "Diesel",
+			"Hybrid": "Híbrido",
+			"Electric": "Eléctrico",
+			"Petrol": "Gasolina"
+		},
+		"invoiceState": {
+			"CANCELED": "Cancelada",
+			"CREATED": "Creada",
+			"GENERATED": "Generada",
+			"PAID": "Pagada"
+		}
+	},
+    "lastUpdateDate": "F. Actualización",
+    "loader": "Cargando ...",
+	"phonenumber": "Teléfono",
+	"phonenumber.placeholder": "Introduzca el número de teléfono",
+	"select": "Seleccionar...",
+	"total": "Total"
   },
   "login" : {
     "title" : "Acceder al sistema",
@@ -95,11 +121,7 @@
       "firstName": "Nombre",
       "firstName.placeholder": "Introduzca el nombre",
       "lastName": "Apellidos",
-      "lastName.placeholder": "Introduzca los apellidos",
-      "email": "Correo electrónico",
-      "email.placeholder": "Introduzca el email",
-      "phonenumber": "Teléfono",
-      "phonenumber.placeholder": "Introduzca el número de teléfono"
+      "lastName.placeholder": "Introduzca los apellidos"
     },
     "messages" : {
       "delete": {
@@ -162,10 +184,10 @@
       "update": "Modificación datos de la factura"
   	},
   	"field": {
+  	  "state": "Estado",
       "vehicle": "Vehículo",
       "vehicle.placeholder": "Introduzca la matrícula del vehículo.",
       "customer": "Cliente",
-      "customerType": "Tipo de cliente",
       "lines": "Líneas de factura"
   	},
     "messages": {
@@ -189,7 +211,10 @@
     },
     "text": {
       "vehicle": "Datos del vehículo",
-      "customer": "Datos del propietario"
+      "customer": "Datos del propietario",
+      "insurer": "Datos de la aseguradora",
+      "billToCustomer": "Facturar al cliente",
+      "billToInsurer": "Facturar a la aseguradora"
     }
   },
   "invocesLine": {
@@ -204,8 +229,10 @@
       "price": "Precio",
       "price.placeholder": "Introduzca el precio",
       "taxRate": "IVA",
+      "taxRate.placeholder": "Introduzca el IVA",
       "discount": "Descuento",
-      "discount.placeholder": "Introduzca el descuento"
+      "discount.placeholder": "Introduzca el descuento",
+      "total": "Importe total"
     },
     "messages": {
       "delete": {

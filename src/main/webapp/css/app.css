@@ -53,3 +53,8 @@
 .table-responsive {
 	margin-bottom: 0px;
 }
+
+/* Invoice styles */
+.invoice-panel-body {
+	min-height: 160px;
+}

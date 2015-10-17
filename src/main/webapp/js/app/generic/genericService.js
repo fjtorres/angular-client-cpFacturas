@@ -1,34 +1,59 @@
 (function() {
     'use strict';
 
-    function GenericService($rootScope, $location, $translate) {
+    function GenericService($rootScope, $location, $translate, $cacheFactory) {
 
-        this.redirectTo = function(path) {
+    	var mixing = {};
+    	
+    	mixing.redirectTo = function(path) {
             $location.path(path);
         };
 
 
-        this.translate = function(key, callback) {
+        mixing.translate = function(key, callback) {
             $translate(key).then(function(text) {
                 callback(text);
             });
         };
         
-        this.showMessage = function (key) {
-        	this.translate(key, function (text) {
+        mixing.showMessage = function (key) {
+        	mixing.translate(key, function (text) {
         		$rootScope.$broadcast('successMessage', text);
         	});
         };
         
-        this.showError = function (key) {
-        	this.translate(key, function (text) {
+        mixing.showError = function (key) {
+        	mixing.translate(key, function (text) {
         		$rootScope.$broadcast('errorMessage', text);
         	});
         };
 
-        return this;
+        mixing.getCache = function (cacheId, create) {
+        	if (create === undefined) {
+        		create = true;
+        	}
+        	
+        	var cache = $cacheFactory.get(cacheId);
+        	
+        	if (cache === undefined && create === true) {
+        		cache = $cacheFactory(cacheId);
+        	}
+        	
+        	return cache;
+        };
+        
+        mixing.getCacheValue = function (cacheId, valueId) {
+        	var value = undefined, cache = mixing.getCache(cacheId);
+        	if (cache !== undefined) {
+        		value = cache.get(valueId);
+        	}
+        	return value;
+        };
+        
+
+        return mixing;
     }
 
-    angular.module('cpFacturasApp').factory('genericService', ['$rootScope', '$location', '$translate', GenericService]);
+    angular.module('cpFacturasApp').factory('genericService', ['$rootScope', '$location', '$translate', '$cacheFactory', GenericService]);
 
 }());

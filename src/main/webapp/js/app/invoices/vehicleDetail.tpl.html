@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h4 class="panel-title">{{'invoices.text.vehicle' | translate}}</h4>
+	</div>
+	<div class="panel-body invoice-panel-body">
+		<div>
+			<strong>{{'vehicles.field.registration' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.registration}}</span>
+		</div>
+		<div>
+			<strong>{{'vehicles.field.model' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.model.name}}</span>
+		</div>
+		<div>
+			<strong>{{'vehicles.field.brand' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.model.brand.name}}</span>
+		</div>
+		<div>
+			<strong>{{'vehicles.field.year' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.year}}</span>
+		</div>
+		<div>
+			<strong>{{'vehicles.field.fuelType' | translate}}</strong>:&nbsp;<span>{{'messages.enum.fuelType.' + ctrl.entity.vehicle.fuelType | translate}}</span>
+		</div>
+		<div>
+			<strong>{{'vehicles.field.doors' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.doors}}</span>
+		</div>
+	</div>
+</div>

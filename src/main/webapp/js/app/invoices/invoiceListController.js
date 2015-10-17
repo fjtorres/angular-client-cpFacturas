@@ -11,6 +11,7 @@
 	    vm.itemsPerPage = 10;
 	    vm.sortField = 'creationDate';
 	    vm.sortDirection = 'ASC';
+		vm.utils = invoiceService.utils;
 	    
     	vm.onConfirmDeleteClick = function(item){
 	        

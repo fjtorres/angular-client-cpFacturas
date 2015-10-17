@@ -2,11 +2,13 @@
   'use strict';
 
   function InvoiceController ($routeParams, $modal, genericService, vehiclesService, invoiceService) {
-		
 		var vm = this;
 		vm.isUpdate = false;
 		vm.vehicleAutocomplete = "";
 		vm.entity = {lines: []};
+		vm.utils = invoiceService.utils;
+		
+		vm.invoiceToType = 1;
 	
 	    if ($routeParams.itemId != undefined) {
 	    	vm.entity = invoiceService.resource.get({'id': $routeParams.itemId});
@@ -52,12 +54,20 @@
 	          controllerAs: 'modalCtrl',
 	          size: 'md',
 	          resolve: {
-	        	  "entity": function () { return {description: "", amount: 0, price: 0, discount: 0, taxRate: 0};}
+	        	  "entity" : function() {
+						return {
+							description : "",
+							amount : 0,
+							price : 0,
+							discount : 0,
+							taxRate : 0
+						};
+					}
 	          }
 	        });
 
 	        modalInstance.result.then(function (newLine) {
-	          vm.entity.lines.push(newLine);
+        		vm.entity.lines.push(newLine);
 	        }, function () {
 	          // Empty
 	        });
@@ -102,7 +112,6 @@
 		vm.linesGrid.onDelete = function (lineToRemove) {
 			vm.entity.lines.splice(vm.entity.lines.indexOf(lineToRemove), 1);
 		};
-
 	}
   
 	angular.module('cpFacturasApp').controller('invoiceController', ['$routeParams', '$modal', 'genericService', 'vehiclesService', 'invoiceService', InvoiceController]);

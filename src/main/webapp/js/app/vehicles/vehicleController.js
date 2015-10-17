@@ -1,18 +1,39 @@
 (function() {
   'use strict';
 
-  function VehicleController ($routeParams, genericService, vehiclesService, vehicleBrandsService, vehicleModelsService, customerService, insurerService) {
-		
+  function VehicleController ($routeParams, myConfig, genericService, vehiclesService, vehicleBrandsService, vehicleModelsService, customerService, insurerService, enumService) {
 		var vm = this;
 		vm.brands = [];
 		vm.selectedBrand = null;
 		vm.models = [];
 		vm.customers = [];
-		vm.years = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015]; // TODO LOAD LAST XX YEARS
 		vm.doors = [2, 3, 5]; // TODO LOAD FROM SERVER
-		vm.fuelTypeList = [{"id": "Diesel", "name": "Tipo 1"}, {"id": "Hybrid", "name": "Tipo 2"}, {"id": "Electric", "name": "Tipo 3"}, {"id": "Petrol", "name": "Tipo 4"}]; // TODO LOAD FROM SERVER
 		vm.entity = {'id': -1};
 		vm.isUpdate = false;
+		
+		var listCache = genericService.getCache("listCache", true);
+		
+		// Load years information
+		if (listCache.get("VEHICLE_YEARS_LIST") == undefined) {
+			var currentYear = new Date().getFullYear();
+			var years = [currentYear];
+			for (var i=1;i<myConfig.VEHICLE_MAX_YEARS;i++) {
+				years.push(currentYear - i);
+			};
+			
+		    listCache.put("VEHICLE_YEARS_LIST", years);
+		}
+		vm.years = listCache.get("VEHICLE_YEARS_LIST");
+
+		// Load fuel types
+		if (listCache.get("VEHICLE_FUEL_LIST") == undefined) {
+			enumService.fuelTypes().then(function(response){
+				listCache.put("VEHICLE_FUEL_LIST", response.data);
+				vm.fuelTypeList = listCache.get("VEHICLE_FUEL_LIST");
+			});
+		} else {
+			vm.fuelTypeList = listCache.get("VEHICLE_FUEL_LIST");
+		}
 	
 	    if ($routeParams.itemId != undefined) {
 	    	vm.entity = vehiclesService.resource.get({'id': $routeParams.itemId});
@@ -98,6 +119,6 @@
 	   
 	}
   
-	angular.module('cpFacturasApp').controller('vehicleController', ['$routeParams', 'genericService', 'vehiclesService', 'vehicleBrandsService', 'vehicleModelsService', 'customerService', 'insurerService', VehicleController]);
+	angular.module('cpFacturasApp').controller('vehicleController', ['$routeParams', 'myConfig', 'genericService', 'vehiclesService', 'vehicleBrandsService', 'vehicleModelsService', 'customerService', 'insurerService', 'enumService', VehicleController]);
 
 }());

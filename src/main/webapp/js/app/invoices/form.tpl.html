@@ -7,7 +7,7 @@
             <div class="col-sm-5">
             	<div class="input-group">
 	                <input autocomplete='off' type="text" class="form-control" id="txtInvoiceVehicle" placeholder="{{'invoices.field.vehicle.placeholder' | translate}}"
-	                    maxlenght="25" ng-model="ctrl.vehicleAutocomplete" ng-disabled="isUpdate" required tabindex="1"
+	                    maxlenght="25" ng-model="ctrl.vehicleAutocomplete" ng-disabled="isUpdate" tabindex="1"
 	                    typeahead="item as item.registration + ' (' + item.model.brand.name + ' - ' + item.model.name + ')' for item in ctrl.getVehicles($viewValue)"
 	                    typeahead-min-length="2"
 	                    typeahead-loading="loadingVehicles"
@@ -21,82 +21,13 @@
     </div>
     
     <!-- Vehicle panel -->
-	<div class="col-sm-4" ng-show="ctrl.entity.vehicle.id != null">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h4 class="panel-title">{{'invoices.text.vehicle' | translate}}</h4>
-			</div>
-			<div class="panel-body">
-				<div>
-					<strong>{{'vehicles.field.registration' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.registration}}</span>
-				</div>
-				<div>
-					<strong>{{'vehicles.field.model' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.model.name}}</span>
-				</div>
-				<div>
-					<strong>{{'vehicles.field.brand' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.model.brand.name}}</span>
-				</div>
-				<div>
-					<strong>{{'vehicles.field.year' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.year}}</span>
-				</div>
-				<div>
-					<strong>{{'vehicles.field.fuelType' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.fuelType}}</span>
-				</div>
-				<div>
-					<strong>{{'vehicles.field.doors' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.doors}}</span>
-				</div>
-			</div>
-		</div>
-	</div>
+	<div class="col-sm-4" ng-show="ctrl.entity.vehicle.id != null" ng-include="'js/app/invoices/vehicleDetail.tpl.html'"></div>
     
     <!-- Customer panel -->
-	<div class="col-sm-4" ng-show="ctrl.entity.vehicle.id != null">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h4 class="panel-title">{{'invoices.text.customer' | translate}}</h4>
-			</div>
-			<div class="panel-body">
-				<div>
-					<strong>{{'customers.field.code' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.customer.code}}</span>
-				</div>
-				<div>
-					<strong>{{'customers.field.firstName' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.customer.firstName}}</span>
-				</div>
-				<div>
-					<strong>{{'customers.field.lastName' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.customer.lastName}}</span>
-				</div>
-				<div>
-					<strong>{{'customers.field.phonenumber' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.customer.contactData.primaryPhoneNumber}}</span>
-				</div>
-				<div>
-					<strong>{{'customers.field.email' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.customer.contactData.email}}</span>
-				</div>
-			</div>
-		</div>
-	</div>
+	<div class="col-sm-4" ng-show="ctrl.entity.vehicle.id != null && ctrl.entity.vehicle.customer != null" ng-include="'js/app/invoices/customerDetail.tpl.html'"></div>
 		
 	<!-- Insurer panel -->
-	<div class="col-sm-4" ng-show="ctrl.entity.vehicle.id != null && ctrl.entity.vehicle.insurer != null">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h4 class="panel-title">{{'invoices.text.insurer' | translate}}</h4>
-			</div>
-			<div class="panel-body">
-				<div>
-					<strong>{{'insurers.field.code' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.insurer.code}}</span>
-				</div>
-				<div>
-					<strong>{{'insurers.field.name' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.insurer.name}}</span>
-				</div>
-				<div>
-					<strong>{{'insurers.field.phonenumber' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.insurer.contactData.primaryPhoneNumber}}</span>
-				</div>
-				<div>
-					<strong>{{'insurers.field.email' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.insurer.contactData.email}}</span>
-				</div>
-			</div>
-		</div>
-	</div>
+	<div class="col-sm-4" ng-show="ctrl.entity.vehicle.id != null && ctrl.entity.vehicle.insurer != null" ng-include="'js/app/invoices/insurerDetail.tpl.html'"></div>
 	
 </div>
 
@@ -122,11 +53,12 @@
             
             <table class="table table-striped table-bordered table-hover" id="invoice-lines-list">
                 <thead>
-                    <th>{{'invocesLine.field.description' | translate}} <span class="dropup"><span class="caret"></span></span></th>
-                    <th>{{'invocesLine.field.amount' | translate}} <span class="caret"></span></th>
-                    <th>{{'invocesLine.field.price' | translate}} <span class="caret"></span></th>
-                    <th>{{'invocesLine.field.taxRate' | translate}} <span class="caret"></span></th>
-                    <th>{{'invocesLine.field.discount' | translate}} <span class="caret"></span></th>
+                    <th>{{'invocesLine.field.description' | translate}}</th>
+                    <th>{{'invocesLine.field.amount' | translate}}</th>
+                    <th>{{'invocesLine.field.price' | translate}}</th>
+                    <th>{{'invocesLine.field.taxRate' | translate}}</th>
+                    <th>{{'invocesLine.field.discount' | translate}}</th>
+                    <th>{{'invocesLine.field.total' | translate}}</th>
                     <th style="width: 90px;"></th>
                 </thead>
                 <tbody>
@@ -134,8 +66,9 @@
                         <td>{{item.description}}</td>
                         <td>{{item.amount}}</td>
                         <td>{{item.price}}</td>
-                        <td>{{item.taxRate}}</td>
-                        <td>{{item.discount}}</td>
+                        <td>{{item.taxRate + '% (' + ctrl.utils.lineTaxAmount(item) + ')' }}</td>
+                        <td>{{item.discount + '% (' + ctrl.utils.lineDiscountAmount(item) + ')' }}</td>
+                        <td>{{ctrl.utils.lineTotalAmount(item)}}</td>
 						<td>
                             <div class="text-center">
                                 <div class="btn-group">
@@ -144,6 +77,10 @@
                                 </div>
                             </div>
                         </td>
+                    </tr>
+                    <tr ng-show="ctrl.entity.lines.length">
+                    	<td colspan="6"><div style="text-align: right;font-weight: bold;">{{'messages.total' | translate}}</div></td>
+                    	<td>{{ctrl.utils.total(ctrl.entity.lines)}}</td>
                     </tr>
                 </tbody>
             </table>

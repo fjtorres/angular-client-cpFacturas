@@ -72,7 +72,7 @@
     	<div class="form-group">
             <label for="txtVehicleFuelType" class="control-label col-sm-3">{{'vehicles.field.fuelType' | translate}}</label>
             <div class="col-sm-5">
-                <select id="txtVehicleFuelType" class="form-control" ng-model="ctrl.entity.fuelType"  ng-options="item.id as item.name for item in ctrl.fuelTypeList" required tabindex="6">
+                <select id="txtVehicleFuelType" class="form-control" ng-model="ctrl.entity.fuelType"  ng-options="item as 'messages.enum.fuelType.' + item | translate for item in ctrl.fuelTypeList" required tabindex="6">
             		<option value="-1">{{'messages.select' | translate}}</option>
             	</select>
             </div>

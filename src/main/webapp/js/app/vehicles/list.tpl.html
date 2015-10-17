@@ -23,11 +23,13 @@
        <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover table-condensed" id="vehicle-list">
                 <thead>
-                    <th>{{'vehicles.field.registration' | translate}} <span class="dropup"><span class="caret"></span></span></th>
-                    <th>{{'vehicles.field.customer' | translate}} <span class="caret"></span></th>
-                    <th>{{'vehicles.field.brand' | translate}}<span class="caret"></span></th>
-                    <th>{{'vehicles.field.model' | translate}}<span class="caret"></span></th>
-                    <th style="width: 90px;"></th>
+                	<tr>
+	                    <th>{{'vehicles.field.registration' | translate}} <span class="dropup"><span class="caret"></span></span></th>
+	                    <th>{{'vehicles.field.customer' | translate}} <span class="caret"></span></th>
+	                    <th>{{'vehicles.field.brand' | translate}}<span class="caret"></span></th>
+	                    <th>{{'vehicles.field.model' | translate}}<span class="caret"></span></th>
+	                    <th style="width: 90px;"></th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in ctrl.items">
@@ -44,6 +46,9 @@
                                 </div>
                             </div>
                         </td>
+                    </tr>
+                    <tr data-ng-if="!ctrl.items.length">
+                    	<td colspan="7">{{'messages.empty.result' | translate}}</td>
                     </tr>
                 </tbody>
             </table>

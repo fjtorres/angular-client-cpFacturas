@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h4 class="panel-title">{{'invoices.text.insurer' | translate}}</h4>
+	</div>
+	<div class="panel-body invoice-panel-body">
+		<div>
+			<label><strong>{{'invoices.text.billToInsurer' | translate}}</strong>:&nbsp;<input type="radio" ng-model="ctrl.invoiceToType" value="2"/></label>
+		</div>
+		<div>
+			<strong>{{'insurers.field.code' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.insurer.code}}</span>
+		</div>
+		<div>
+			<strong>{{'insurers.field.name' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.insurer.name}}</span>
+		</div>
+		<div>
+			<strong>{{'messages.phonenumber' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.insurer.contactData.primaryPhoneNumber}}</span>
+		</div>
+		<div>
+			<strong>{{'messages.email' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.insurer.contactData.email}}</span>
+		</div>
+	</div>
+</div>

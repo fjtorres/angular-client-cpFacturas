@@ -1,6 +1,4 @@
-angular.module('cpFacturasApp').constant('app.version', '0.0.1');
-
-angular.module('cpFacturasApp').run(['$rootScope', '$location', '$translate', '$cookieStore', '$timeout', 'authenticationService', 'app.version', function($rootScope, $location, $translate, $cookieStore, $timeout, authenticationService, appVersion){
+angular.module('cpFacturasApp').run(['$rootScope', '$location', '$translate', '$cookieStore', '$timeout', 'authenticationService', 'myConfig', function($rootScope, $location, $translate, $cookieStore, $timeout, authenticationService, myConfig){
     
     $rootScope.redirectTo = function ( path ) {
         $location.path( path );
@@ -20,7 +18,7 @@ angular.module('cpFacturasApp').run(['$rootScope', '$location', '$translate', '$
         $rootScope.appTitle = text;
     });
 
-    $rootScope.appVersion = appVersion;
+    $rootScope.appVersion = myConfig.APP_VERSION;
 
     var hiddenLoader = function () {
     	$timeout(function() {
@@ -83,5 +81,4 @@ angular.module('cpFacturasApp').run(['$rootScope', '$location', '$translate', '$
             $rootScope.redirectTo("/");
         });
     }
-
 }]);

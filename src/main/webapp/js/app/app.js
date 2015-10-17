@@ -2,7 +2,9 @@
 
 angular.module('cpFacturasApp', ['ngRoute', 'ngResource', 'ngCookies', 'ngAnimate', 'pascalprecht.translate', 'ui.bootstrap'])
 .constant("myConfig", {
-        "apiUrl": "http://localhost:8080/server/api"
+		'APP_VERSION': '0.0.1',
+        "apiUrl": "http://localhost:8080/server/api",
+        "VEHICLE_MAX_YEARS": 25
 })
 .config(['$routeProvider', '$translateProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $translateProvider, $locationProvider, $httpProvider) {
 

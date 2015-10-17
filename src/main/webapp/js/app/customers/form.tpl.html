@@ -39,22 +39,22 @@
     <div class="col-sm-6">
 
         <div class="form-group form-group-sm">
-            <label for="txtCustomerEmail" class="control-label col-sm-3">{{'customers.field.email' | translate}}</label>
+            <label for="txtCustomerEmail" class="control-label col-sm-3">{{'messages.email' | translate}}</label>
             <div class="col-sm-9">
                 <div class="input-group">
                     <span class="input-group-addon">@</span>
-                    <input type="email" class="form-control" id="txtCustomerEmail" placeholder="{{'customers.field.email.placeholder' | translate}}"
+                    <input type="email" class="form-control" id="txtCustomerEmail" placeholder="{{'messages.email.placeholder' | translate}}"
                         maxlenght="100" ng-model="ctrl.entity.contactData.email" required tabindex="4" ng-model-options="{ updateOn: 'submit' }"/>
                 </div>
             </div>
         </div>
 
         <div class="form-group form-group-sm">
-            <label for="txtCustomerPhoneNumber" class="control-label col-sm-3">{{'customers.field.phonenumber' | translate}}</label>
+            <label for="txtCustomerPhoneNumber" class="control-label col-sm-3">{{'messages.phonenumber' | translate}}</label>
             <div class="col-sm-9">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-                    <input type="tel" class="form-control" id="txtCustomerPhoneNumber" placeholder="{{'customers.field.phonenumber.placeholder' | translate}}"
+                    <input type="tel" class="form-control" id="txtCustomerPhoneNumber" placeholder="{{'messages.phonenumber.placeholder' | translate}}"
                         maxlenght="12" ng-model="ctrl.entity.contactData.primaryPhoneNumber" required tabindex="5" ng-model-options="{ updateOn: 'submit' }"/>
                 </div>
             </div>
