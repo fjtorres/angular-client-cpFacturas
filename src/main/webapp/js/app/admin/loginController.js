@@ -22,10 +22,6 @@ function LoginController ($scope, $rootScope, $cookieStore, authenticationServic
                 $scope.redirectTo("/");
             });
         });
-
-//        authenticationService.authenticate($.param({username: $scope.credentials.username, password: $scope.credentials.password}), function (data){
-//            console.log(data);
-//        });
     };
 
 }

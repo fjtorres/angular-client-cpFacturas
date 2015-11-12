@@ -3,7 +3,7 @@
 
   function InsurerController ($routeParams, $modal, genericService, insurerService) {
 	    var vm = this;
-	    vm.entity = {'id': -1, 'contactData': {}};
+	    vm.entity = {'contactData': {}};
 	    vm.isUpdate = false;
 
 	    if ($routeParams.itemId != undefined) {

@@ -8,7 +8,7 @@
 		vm.models = [];
 		vm.customers = [];
 		vm.doors = [2, 3, 5]; // TODO LOAD FROM SERVER
-		vm.entity = {'id': -1};
+		vm.entity = {};
 		vm.isUpdate = false;
 		
 		var listCache = genericService.getCache("listCache", true);

@@ -3,7 +3,7 @@
 
   function CustomerController ($routeParams, $modal, genericService, customerService) {
 	    var vm = this;
-	    vm.entity = {'id': -1,'type': 'PERSON', 'contactData': {}};
+	    vm.entity = {'type': 'PERSON', 'contactData': {}};
 	    vm.isUpdate = false;
 
 	    if ($routeParams.itemId != undefined) {

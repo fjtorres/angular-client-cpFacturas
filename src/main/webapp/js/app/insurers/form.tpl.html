@@ -1,4 +1,4 @@
-<input type="hidden" ng-model="ctrl.entity.id" />
+<input type="hidden" data-ng-model="ctrl.entity.id" />
 
 <div class="row">
 
@@ -8,7 +8,7 @@
             <label for="txtInsurerCode" class="control-label col-sm-3">{{'insurers.field.code' | translate}}</label>
             <div class="col-sm-5">
                 <input type="text" class="form-control col-sm-3" id="txtInsurerCode" placeholder="{{'insurers.field.code.placeholder' | translate}}"
-                    maxlenght="20" ng-model="ctrl.entity.code" ng-disabled="ctrl.isUpdate" required tabindex="1" ng-model-options="{ updateOn: 'submit' }"/>
+                    maxlength="20" required tabindex="1" data-ng-model="ctrl.entity.code" data-ng-disabled="ctrl.isUpdate" data-ng-model-options="{ updateOn: 'submit' }"/>
             </div>
         </div>
 
@@ -16,7 +16,7 @@
             <label for="txtInsurerName" class="control-label col-sm-3">{{'insurers.field.name' | translate}}</label>
             <div class="col-sm-7">
                 <input type="text" class="form-control" id="txtInsurerName" placeholder="{{'insurers.field.name.placeholder' | translate}}"
-                    maxlenght="100" ng-model="ctrl.entity.name" required tabindex="2" ng-model-options="{ updateOn: 'submit' }"/>
+                    maxlength="100" required tabindex="2" data-ng-model="ctrl.entity.name" data-ng-model-options="{ updateOn: 'submit' }"/>
             </div>
         </div>
 
@@ -30,7 +30,7 @@
                 <div class="input-group">
                     <span class="input-group-addon">@</span>
                     <input type="email" class="form-control" id="txtInsurerEmail" placeholder="{{'messages.email.placeholder' | translate}}"
-                        maxlenght="100" ng-model="ctrl.entity.contactData.email" required tabindex="4" ng-model-options="{ updateOn: 'submit' }"/>
+                        maxlength="100" required tabindex="4" data-ng-model="ctrl.entity.contactData.email" data-ng-model-options="{ updateOn: 'submit' }"/>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
                     <input type="tel" class="form-control" id="txtInsurerNumber" placeholder="{{'messages.phonenumber.placeholder' | translate}}"
-                        maxlenght="12" ng-model="ctrl.entity.contactData.primaryPhoneNumber" required tabindex="5" ng-model-options="{ updateOn: 'submit' }"/>
+                        maxlength="12" required tabindex="5" data-ng-model="ctrl.entity.contactData.primaryPhoneNumber" data-ng-model-options="{ updateOn: 'submit' }"/>
                 </div>
             </div>
         </div>

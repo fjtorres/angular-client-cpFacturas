@@ -8,12 +8,12 @@
                 
                 <div class="input-group input-login">
                     <span class="input-group-addon"><i class="fa fa-user" /></span>
-                    <input type="text" class="form-control" placeholder="{{'login.username' | translate}}" title="{{'login.username' | translate}}" ng-model="credentials.username" required />
+                    <input type="text" class="form-control" placeholder="{{'login.username' | translate}}" title="{{'login.username' | translate}}" data-ng-model="credentials.username" required tabindex="1"/>
                 </div>
 
                 <div class="input-group input-login">
                     <span class="input-group-addon password-login"><i class="fa fa-lock" /></span>
-                    <input type="password" class="form-control" placeholder="{{'login.password' | translate}}" title="{{'login.password' | translate}}" ng-model="credentials.password" required />
+                    <input type="password" class="form-control" placeholder="{{'login.password' | translate}}" title="{{'login.password' | translate}}" data-ng-model="credentials.password" required tabindex="2"/>
                 </div>
                 
                 <div class="checkbox">
@@ -22,7 +22,7 @@
 
               </div>
               <div class="panel-footer">
-                  <button class="btn btn-success" title="" tabindex="6" ng-click="login()">{{'buttons.access' | translate}}</button>
+                  <button class="btn btn-success" title="" tabindex="6" data-ng-click="login()">{{'buttons.access' | translate}}</button>
               </div>
             </div>
 

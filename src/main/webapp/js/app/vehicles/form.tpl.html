@@ -6,7 +6,7 @@
             <label for="txtVehicleRegistration" class="control-label col-sm-3">{{'vehicles.field.registration' | translate}}</label>
             <div class="col-sm-5">
                 <input type="text" class="form-control col-sm-3" id="txtVehicleRegistration" placeholder="{{'vehicles.field.registration.placeholder' | translate}}"
-                    maxlenght="25" data-ng-model="ctrl.entity.registration" data-ng-disabled="ctrl.isUpdate" required tabindex="1" ng-model-options="{ updateOn: 'submit' }"/>
+                    maxlength="25" data-ng-model="ctrl.entity.registration" data-ng-disabled="ctrl.isUpdate" required tabindex="1" data-ng-model-options="{ updateOn: 'submit' }"/>
             </div>
         </div>
     
@@ -19,7 +19,9 @@
 	    <div class="form-group">
             <label for="txtVehicleBrand" class="control-label col-sm-3">{{'vehicles.field.brand' | translate}}</label>
             <div class="col-sm-5">
-            	<select id="txtVehicleBrand" class="form-control" data-ng-model="ctrl.selectedBrand" data-ng-options="item.name group by (item.group | translate) for item in ctrl.brands | orderBy:['group']" ng-change="ctrl.onBrandChange()" required tabindex="2">
+            	<select id="txtVehicleBrand" class="form-control" data-ng-model="ctrl.selectedBrand"
+            		data-ng-options="item.name group by (item.group | translate) for item in ctrl.brands | orderBy:['group']"
+            		data-ng-change="ctrl.onBrandChange()" required tabindex="2">
             		<option value="-1">{{'messages.select' | translate}}</option>
             	</select>
             </div>
@@ -72,7 +74,7 @@
     	<div class="form-group">
             <label for="txtVehicleFuelType" class="control-label col-sm-3">{{'vehicles.field.fuelType' | translate}}</label>
             <div class="col-sm-5">
-                <select id="txtVehicleFuelType" class="form-control" ng-model="ctrl.entity.fuelType"  ng-options="item as 'messages.enum.fuelType.' + item | translate for item in ctrl.fuelTypeList" required tabindex="6">
+                <select id="txtVehicleFuelType" class="form-control" data-ng-model="ctrl.entity.fuelType" data-ng-options="item as 'messages.enum.fuelType.' + item | translate for item in ctrl.fuelTypeList" required tabindex="6">
             		<option value="-1">{{'messages.select' | translate}}</option>
             	</select>
             </div>
@@ -86,9 +88,9 @@
             <label for="txtVehicleCustomer" class="control-label col-sm-3">{{'vehicles.field.customer' | translate}}</label>
             <div class="col-sm-5">
                 <input autocomplete='off' type="text" class="form-control col-sm-3" id="txtVehicleCustomer" placeholder="{{'vehicles.field.customer' | translate}}"
-                    maxlenght="25" ng-model="ctrl.entity.customer" ng-disabled="isUpdate" required tabindex="7"
-                    typeahead="item as item.code + ' - ' + item.firstName + ' ' + item.lastName for item in ctrl.getCustomers($viewValue)" typeahead-min-length="3" typeahead-loading="loadingCustomers"/>
-                <i ng-show="loadingCustomers" class="glyphicon glyphicon-refresh"></i>
+                    maxlength="25" data-ng-model="ctrl.entity.customer" data-ng-disabled="isUpdate" required tabindex="7"
+                    data-typeahead="item as item.code + ' - ' + item.firstName + ' ' + item.lastName for item in ctrl.getCustomers($viewValue)" data-typeahead-min-length="3" data-typeahead-loading="loadingCustomers"/>
+                <i data-ng-show="loadingCustomers" class="glyphicon glyphicon-refresh"></i>
             </div>
         </div>
 	
@@ -100,9 +102,9 @@
             <label for="txtVehicleInsurer" class="control-label col-sm-3">{{'vehicles.field.insurer' | translate}}</label>
             <div class="col-sm-5">
                 <input autocomplete='off' type="text" class="form-control col-sm-3" id="txtVehicleInsurer" placeholder="{{'vehicles.field.insurer' | translate}}"
-                    maxlenght="25" ng-model="ctrl.entity.insurer" ng-disabled="isUpdate" tabindex="8"
-                    typeahead="item as item.code + ' - ' + item.name for item in ctrl.getInsurers($viewValue)" typeahead-min-length="3" typeahead-loading="loadingInsurers"/>
-                <i ng-show="loadingInsurers" class="glyphicon glyphicon-refresh"></i>
+                    maxlength="25" data-ng-model="ctrl.entity.insurer" data-ng-disabled="isUpdate" tabindex="8"
+                    data-typeahead="item as item.code + ' - ' + item.name for item in ctrl.getInsurers($viewValue)" data-typeahead-min-length="3" data-typeahead-loading="loadingInsurers"/>
+                <i data-ng-show="loadingInsurers" class="glyphicon glyphicon-refresh"></i>
             </div>
         </div>
 	

@@ -4,7 +4,7 @@
 	</div>
 	<div class="panel-body invoice-panel-body">
 		<div>
-			<label><strong>{{'invoices.text.billToCustomer' | translate}}</strong>:&nbsp;<input type="radio" ng-model="ctrl.invoiceToType" value="1"/></label>
+			<label><strong>{{'invoices.text.billToCustomer' | translate}}</strong>:&nbsp;<input type="radio" data-ng-model="ctrl.invoiceToType" value="1"/></label>
 		</div>
 		<div>
 			<strong>{{'customers.field.code' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.customer.code}}</span>
