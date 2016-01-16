@@ -4,7 +4,7 @@ angular.module('cpFacturasApp', ['ngRoute', 'ngResource', 'ngCookies', 'ngAnimat
 .constant("myConfig", {
 		'APP_VERSION': '0.0.1',
         "apiUrl": "http://localhost:8080/server/api",
-        "VEHICLE_MAX_YEARS": 25
+        "VEHICLE_MAX_YEARS": 50
 })
 .config(['$routeProvider', '$translateProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $translateProvider, $locationProvider, $httpProvider) {
 
