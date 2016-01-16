@@ -40,7 +40,7 @@
                         <td>{{'messages.enum.invoiceState.' + item.state | translate}}</td>
                         <td>{{item.creationDate | date: 'dd/MM/yyyy'}}</td>
                         <td></td>
-                        <td>{{ctrl.utils.total(item.lines)}}</td>
+                        <td>{{ctrl.utils.total2(item.lines, true, false, item.taxRate) | number: 2}}</td>
 						<td>
                             <div class="text-center">
                                 <div class="btn-group">

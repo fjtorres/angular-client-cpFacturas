@@ -23,6 +23,7 @@
     "confirmation" : {
       "title" : "Confirmar operación"
     },
+    "cost": "Importe",
     "creationDate": "F. Creación",
 	"email": "Correo electrónico",
 	"email.placeholder": "Introduzca el email",
@@ -50,7 +51,10 @@
 	"phonenumber": "Teléfono",
 	"phonenumber.placeholder": "Introduzca el número de teléfono",
 	"select": "Seleccionar...",
-	"total": "Total"
+	"taxRate": "IVA",
+	"taxRate.placeholder": "Introduzca el IVA",
+	"total": "Total",
+	"totalWithTax": "Total IVA"
   },
   "login" : {
     "title" : "Acceder al sistema",
@@ -116,7 +120,7 @@
       "update": "Modificación datos del cliente"
     },
     "field": {
-      "code": "Código",
+      "code": "DNI",
       "code.placeholder": "Introduzca el código",
       "firstName": "Nombre",
       "firstName.placeholder": "Introduzca el nombre",
@@ -158,7 +162,8 @@
       "model": "Modelo",
       "year": "Año",
       "doors": "Nº de puertas",
-      "fuelType": "Tipo de combustible"
+      "fuelType": "Tipo de combustible",
+      "insurer": "Aseguradora"
     },
     "messages": {
       "delete": {
@@ -188,6 +193,7 @@
       "vehicle": "Vehículo",
       "vehicle.placeholder": "Introduzca la matrícula del vehículo.",
       "customer": "Cliente",
+      "observations": "Observaciones",
       "lines": "Líneas de factura"
   	},
     "messages": {
@@ -228,11 +234,8 @@
       "amount.placeholder": "Introduzca la cantidad.",
       "price": "Precio",
       "price.placeholder": "Introduzca el precio",
-      "taxRate": "IVA",
-      "taxRate.placeholder": "Introduzca el IVA",
       "discount": "Descuento",
-      "discount.placeholder": "Introduzca el descuento",
-      "total": "Importe total"
+      "discount.placeholder": "Introduzca el descuento"
     },
     "messages": {
       "delete": {
@@ -254,7 +257,7 @@
       "update": "Modificación datos de la aseguradora"
   	},
   	"field": {
-      "code": "Código",
+      "code": "CIF",
       "code.placeholder": "Introduzca el código",
       "name": "Nombre",
       "name.placeholder": "Introduzca el nombre"

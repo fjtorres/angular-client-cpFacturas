@@ -21,14 +21,25 @@
     </div>
     
     <!-- Vehicle panel -->
-	<div class="col-sm-4" data-ng-show="ctrl.entity.vehicle.id != null" data-ng-include="'js/app/invoices/vehicleDetail.tpl.html'"></div>
+	<div class="col-sm-12 col-md-4" data-ng-show="ctrl.entity.vehicle.id != null" data-ng-include="'js/app/invoices/vehicleDetail.tpl.html'"></div>
     
     <!-- Customer panel -->
-	<div class="col-sm-4" data-ng-show="ctrl.entity.vehicle.id != null && ctrl.entity.vehicle.customer != null" data-ng-include="'js/app/invoices/customerDetail.tpl.html'"></div>
+	<div class="col-sm-12 col-md-4" data-ng-show="ctrl.entity.vehicle.id != null && ctrl.entity.vehicle.customer != null" data-ng-include="'js/app/invoices/customerDetail.tpl.html'"></div>
 		
 	<!-- Insurer panel -->
-	<div class="col-sm-4" data-ng-show="ctrl.entity.vehicle.id != null && ctrl.entity.vehicle.insurer != null" data-ng-include="'js/app/invoices/insurerDetail.tpl.html'"></div>
+	<div class="col-sm-12 col-md-4" data-ng-show="ctrl.entity.vehicle.id != null && ctrl.entity.vehicle.insurer != null" data-ng-include="'js/app/invoices/insurerDetail.tpl.html'"></div>
 	
+</div>
+
+<div class="row" data-ng-show="ctrl.entity.vehicle.id != null">
+	<div class="col-sm-12 col-md-4">
+		<div class="form-group">
+			<label for="txtObservations" class="control-label col-sm-3">{{'invoices.field.observations' | translate}}</label>
+			<div class="col-sm-9">
+				<textarea id="txtObservations" data-ng-model="ctrl.entity.observations" class="form-control" maxlength="500" rows="4" cols="75"></textarea>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!-- Table buttons -->
@@ -57,22 +68,18 @@
                 <thead>
                 	<tr>
 	                    <th>{{'invocesLine.field.description' | translate}}</th>
-	                    <th>{{'invocesLine.field.amount' | translate}}</th>
-	                    <th>{{'invocesLine.field.price' | translate}}</th>
-	                    <th>{{'invocesLine.field.taxRate' | translate}}</th>
-	                    <th>{{'invocesLine.field.discount' | translate}}</th>
-	                    <th>{{'invocesLine.field.total' | translate}}</th>
+	                    <th style="width: 80px;">{{'invocesLine.field.amount' | translate}}</th>
+	                    <th style="width: 65px;">{{'invocesLine.field.price' | translate}}</th>
+	                    <th style="width: 95px;">{{'invocesLine.field.discount' | translate}}</th>
 	                    <th style="width: 90px;"></th>
                     </tr>
                 </thead>
                 <tbody>
                    <tr data-ng-repeat="item in ctrl.entity.lines">
                         <td>{{item.description}}</td>
-                        <td>{{item.amount}}</td>
-                        <td>{{item.price}}</td>
-                        <td>{{item.taxRate + '% (' + ctrl.utils.lineTaxAmount(item) + ')' }}</td>
-                        <td>{{item.discount + '% (' + ctrl.utils.lineDiscountAmount(item) + ')' }}</td>
-                        <td>{{ctrl.utils.lineTotalAmount(item)}}</td>
+                        <td>{{item.amount | number: 2}}</td>
+                        <td>{{item.price | number: 2}}</td>
+                        <td>{{item.discount | number: 2}} %</td>
 						<td>
                             <div class="text-center">
                                 <div class="btn-group">
@@ -82,13 +89,30 @@
                             </div>
                         </td>
                     </tr>
-                    <tr data-ng-show="ctrl.entity.lines.length">
-                    	<td colspan="6"><div style="text-align: right;font-weight: bold;">{{'messages.total' | translate}}</div></td>
-                    	<td>{{ctrl.utils.total(ctrl.entity.lines)}}</td>
-                    </tr>
                 </tbody>
             </table>
             
+        </div>
+        
+        <div class="total-separator pull-right" data-ng-show="ctrl.entity.lines.length">
+        	<table class="table table-bordered" style="width:330px;">
+        		<thead>
+                	<tr class="active">
+                		<th style="width: 80px;">{{'messages.cost' | translate}}</th>
+                		<th style="width: 65px;">{{'messages.taxRate' | translate}}</th>
+                		<th style="width: 95px;">{{'messages.totalWithTax' | translate}}</th>
+                		<th style="width: 90px;">{{'messages.total' | translate}}</th>
+                	</tr>
+                </thead>
+            	<tbody>
+					<tr>
+                    	<td>{{ctrl.utils.total2(ctrl.entity.lines, false, false, ctrl.entity.taxRate) | number: 2}}</td>
+                    	<td>{{ctrl.entity.taxRate}} %</td>
+                    	<td>{{ctrl.utils.total2(ctrl.entity.lines, false, true, ctrl.entity.taxRate) | number: 2}}</td>
+                    	<td>{{ctrl.utils.total2(ctrl.entity.lines, true, false, ctrl.entity.taxRate) | number: 2}}</td>
+                    </tr>
+            	</tbody>
+            </table>
         </div>
     </div>
     

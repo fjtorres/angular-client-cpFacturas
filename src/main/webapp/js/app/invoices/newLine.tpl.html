@@ -10,22 +10,17 @@
 		</div>
 		<div class="form-group">
 			<label for="txtLineAmount">{{'invocesLine.field.amount' | translate}}</label>
-			<input type="number" max="99999" min="0" pattern="[0-9]+([\.|,][0-9]+)?" class="form-control" id="txtLineAmount" placeholder="{{'invocesLine.field.amount.placeholder' | translate}}"
+			<input type="number" max="99999" min="0" step="any" pattern="[0-9]+([\.|,][0-9]+)?" class="form-control" id="txtLineAmount" placeholder="{{'invocesLine.field.amount.placeholder' | translate}}"
 			 	data-ng-model="modalCtrl.entity.amount" required />
 		</div>
 		<div class="form-group">
 			<label for="txtLinePrice">{{'invocesLine.field.price' | translate}}</label>
-			<input type="number" max="99999" min="0" pattern="[0-9]+([\.|,][0-9]+)?" class="form-control" id="txtLinePrice" placeholder="{{'invocesLine.field.price.placeholder' | translate}}"
+			<input type="number" max="99999" min="0" step="any" pattern="[0-9]+([\.|,][0-9]+)?" class="form-control" id="txtLinePrice" placeholder="{{'invocesLine.field.price.placeholder' | translate}}"
 				data-ng-model="modalCtrl.entity.price" required />
 		</div>
 		<div class="form-group">
-			<label for="txtLineDiscount">{{'invocesLine.field.taxRate' | translate}}</label>
-			<input type="number" max="100" min="0" pattern="[0-9]+([\.|,][0-9]+)?" class="form-control" id="txtLineTaxRate" placeholder="{{'invocesLine.field.taxRate.placeholder' | translate}}"
-				data-ng-model="modalCtrl.entity.taxRate" />
-		</div>
-		<div class="form-group">
 			<label for="txtLineDiscount">{{'invocesLine.field.discount' | translate}}</label>
-			<input type="number" max="100" min="0" pattern="[0-9]+([\.|,][0-9]+)?" class="form-control" id="txtLineDiscount" placeholder="{{'invocesLine.field.discount.placeholder' | translate}}"
+			<input type="number" max="100" min="0" step="any" pattern="[0-9]+([\.|,][0-9]+)?" class="form-control" id="txtLineDiscount" placeholder="{{'invocesLine.field.discount.placeholder' | translate}}"
 				data-ng-model="modalCtrl.entity.discount" />
 		</div>
     

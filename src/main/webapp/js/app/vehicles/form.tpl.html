@@ -47,7 +47,7 @@
     	<div class="form-group">
             <label for="txtVehicleYear" class="control-label col-sm-3">{{'vehicles.field.year' | translate}}</label>
             <div class="col-sm-5">
-                <select id="txtVehicleYear" class="form-control" data-ng-model="ctrl.entity.year"  data-ng-options="item for item in ctrl.years" required tabindex="4">
+                <select id="txtVehicleYear" class="form-control" data-ng-model="ctrl.entity.year" data-ng-options="item for item in ctrl.years" tabindex="4">
             		<option value="-1">{{'messages.select' | translate}}</option>
             	</select>
             </div>
@@ -60,7 +60,7 @@
     	<div class="form-group">
             <label for="txtVehicleDoors" class="control-label col-sm-3">{{'vehicles.field.doors' | translate}}</label>
             <div class="col-sm-5">
-                <select id="txtVehicleDoors" class="form-control" data-ng-model="ctrl.entity.doors"  data-ng-options="item for item in ctrl.doors" required tabindex="5">
+                <select id="txtVehicleDoors" class="form-control" data-ng-model="ctrl.entity.doors" data-ng-options="item for item in ctrl.doors" tabindex="5">
             		<option value="-1">{{'messages.select' | translate}}</option>
             	</select>
             </div>
@@ -74,7 +74,7 @@
     	<div class="form-group">
             <label for="txtVehicleFuelType" class="control-label col-sm-3">{{'vehicles.field.fuelType' | translate}}</label>
             <div class="col-sm-5">
-                <select id="txtVehicleFuelType" class="form-control" data-ng-model="ctrl.entity.fuelType" data-ng-options="item as 'messages.enum.fuelType.' + item | translate for item in ctrl.fuelTypeList" required tabindex="6">
+                <select id="txtVehicleFuelType" class="form-control" data-ng-model="ctrl.entity.fuelType" data-ng-options="item as 'messages.enum.fuelType.' + item | translate for item in ctrl.fuelTypeList" tabindex="6">
             		<option value="-1">{{'messages.select' | translate}}</option>
             	</select>
             </div>

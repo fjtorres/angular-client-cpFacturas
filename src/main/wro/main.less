@@ -3,6 +3,14 @@
 @faBaseSize: 2em;
 @shorcutHover: #e8e8e8;
 
+/* Bootstrap vars */
+@gray-base: #000;
+@gray-darker: lighten(@gray-base, 13.5%);
+@gray-dark: lighten(@gray-base, 20%);
+@gray: lighten(@gray-base, 33.5%);
+@gray-light: lighten(@gray-base, 46.7%);
+@gray-lighter: lighten(@gray-base, 93.5%);
+
 /* Mixing */
 .border-radius (@radius: 3px) {
     -moz-border-radius: @radius;
@@ -62,6 +70,11 @@
 	padding-left: 14px;
 }
 
+/* Invoice page */
+.invoice-page .total-separator {
+	margin-top: 5px;
+}
+
 /* Menu */
 .navbar-text a {
 	text-decoration: none;
@@ -88,6 +101,11 @@
 
 .table-responsive {
 	margin-bottom: 0px;
+}
+
+.table-hover tbody tr:hover {
+  background-color: @gray;
+  color: #FFF;
 }
 
 /* Invoice styles */

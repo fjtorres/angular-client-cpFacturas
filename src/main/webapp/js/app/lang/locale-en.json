@@ -23,6 +23,7 @@
   	"confirmation" : {
       "title" : "Operation confirmation"
     },
+    "cost": "Cost",
     "creationDate": "Created",
 	"email": "E-mail",
 	"email.placeholder": "Enter the e-mail",
@@ -50,7 +51,10 @@
 	"phonenumber": "Phone",
 	"phonenumber.placeholder": "Enter the phone number",
 	"select": "Select...",
-	"total": "Total"
+	"taxRate": "Tax rate",
+	"taxRate": "Enter tax rate",
+	"total": "Total",
+	"totalWithTax": "Total tax"
   },
   "login" : {
     "title" : "Log in",
@@ -159,7 +163,8 @@
       "model": "Model",
       "year": "Year",
       "doors": "Number of doors",
-      "fuelType": "Fuel type"
+      "fuelType": "Fuel type",
+      "insurer": "Aseguradora"
     },
     "messages": {
       "delete": {
@@ -189,6 +194,7 @@
       "vehicle": "Vehicle",
       "vehicle.placeholder": "Enter vehicle registration",
       "customer": "Customer",
+      "observations": "Observations",
       "lines": "Invoice lines"
     },
     "messages": {
@@ -228,11 +234,8 @@
         "amount.placeholder": "Enter amount",
         "price": "Price",
         "price.placeholder": "Enter price",
-        "taxRate": "Tax rate",
-        "taxRate": "Enter tax rate",
         "discount": "Discount",
-        "discount.placeholder": "Enter discount",
-      	"total": "Total"
+        "discount.placeholder": "Enter discount"
     },
     "messages": {
       "delete": {

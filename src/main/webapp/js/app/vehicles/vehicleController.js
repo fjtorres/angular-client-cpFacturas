@@ -7,7 +7,7 @@
 		vm.selectedBrand = null;
 		vm.models = [];
 		vm.customers = [];
-		vm.doors = [2, 3, 5]; // TODO LOAD FROM SERVER
+		vm.doors = [2, 3, 4, 5]; // TODO LOAD FROM SERVER
 		vm.entity = {};
 		vm.isUpdate = false;
 		

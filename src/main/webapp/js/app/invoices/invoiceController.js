@@ -5,9 +5,8 @@
 		var vm = this;
 		vm.isUpdate = false;
 		vm.vehicleAutocomplete = "";
-		vm.entity = {lines: []};
+		vm.entity = {taxRate: 21, lines: []}; // FIXME Tax rate configuration
 		vm.utils = invoiceService.utils;
-		
 		vm.invoiceToType = 1;
 	
 	    if ($routeParams.itemId != undefined) {
@@ -38,6 +37,11 @@
 		
 		vm.onSelectVehicle = function(item, model, label) {
 			vm.entity.vehicle = item;
+			if (item.insurer) {
+				vm.invoiceToType = 2;
+			} else {
+				vm.invoiceToType = 1;
+			}
 		};
 		
 		vm.onClearVehicleClick = function () {
@@ -57,10 +61,9 @@
 	        	  "entity" : function() {
 						return {
 							description : "",
-							amount : 0,
+							amount : 1,
 							price : 0,
-							discount : 0,
-							taxRate : 0
+							discount : 0
 						};
 					}
 	          }
