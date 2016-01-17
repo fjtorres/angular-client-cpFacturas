@@ -12,14 +12,18 @@
     "access": "Access",
     "add": "Add",
     "back": "Back",
+    "back.title": "Back to the previous window",
     "cancel": "Cancel",
     "clear": "Clear",
+    "clear.title": "Clear form data",
     "logout": "Salir",
     "no" : "No",
     "save": "Save",
     "yes" : "Yes"
   },
   "messages" : {
+  	"address": "Address",
+  	"address.placeholder": "Enter the address",
   	"confirmation" : {
       "title" : "Operation confirmation"
     },
@@ -46,8 +50,11 @@
 			"PAID": "Paid"
 		}
 	},
+	"fax": "Fax",
+	"fax.placeholder": "Enter the fax number",
     "lastUpdateDate": "Updated",
     "loader": "Loading ...",
+    "phonenumbers": "Phones",
 	"phonenumber": "Phone",
 	"phonenumber.placeholder": "Enter the phone number",
 	"select": "Select...",
@@ -138,7 +145,16 @@
       },
       "update": {
         "success": "You have successfully updated customer data."
+      },
+      "save": {
+      	"title": "Save customer data"
       }
+    },
+	"buttons": {
+      "add": "Add new customer",
+      "delete": "Remove customer",
+      "save": "Save customer data",
+      "update": "Update customer"
     }
   },
   "companies": {
@@ -164,7 +180,7 @@
       "year": "Year",
       "doors": "Number of doors",
       "fuelType": "Fuel type",
-      "insurer": "Aseguradora"
+      "insurer": "Insurer"
     },
     "messages": {
       "delete": {
@@ -181,6 +197,12 @@
         "general": "General",
         "others": "Others"
       }
+    },
+	"buttons": {
+      "add": "Add new vehicle",
+      "delete": "Remove vehicle",
+      "save": "Save vehicle data",
+      "update": "Update vehicle"
     }
   },
   "invoices" : {
@@ -277,6 +299,7 @@
     "buttons": {
       "add": "Add new insurer",
       "delete": "Remove insurer",
+      "save": "Save insurer data",
       "update": "Update insurer"
     },
     "text": { }

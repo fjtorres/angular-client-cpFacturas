@@ -12,14 +12,18 @@
     "access": "Acceder",
     "add": "Añadir",
     "back": "Volver",
+    "back.title": "Volver a la ventana anterior",
     "cancel": "Cancelar",
     "clear": "Limpiar",
+    "clear.title": "Limpiar datos del formulario",
     "logout": "Salir",
     "no" : "No",
     "save": "Guardar",
     "yes" : "Si"
   },
   "messages" : {
+	"address": "Dirección",
+  	"address.placeholder": "Introduzca la dirección",
     "confirmation" : {
       "title" : "Confirmar operación"
     },
@@ -46,8 +50,11 @@
 			"PAID": "Pagada"
 		}
 	},
+	"fax": "Fax",
+	"fax.placeholder": "Introduzca el número de fax",
     "lastUpdateDate": "F. Actualización",
     "loader": "Cargando ...",
+    "phonenumbers": "Teléfonos",
 	"phonenumber": "Teléfono",
 	"phonenumber.placeholder": "Introduzca el número de teléfono",
 	"select": "Seleccionar...",
@@ -138,6 +145,12 @@
       "update": {
         "success": "Se han actualizado correctamente los datos del cliente."
       }
+    },
+    "buttons": {
+      "add": "Crear nuevo cliente",
+      "delete": "Eliminar cliente",
+      "save": "Guardar datos del cliente",
+      "update": "Actualizar cliente"
     }
   },
   "companies": {
@@ -180,6 +193,12 @@
         "general": "General",
         "others": "Otros"
       }
+    },
+    "buttons": {
+      "add": "Crear nuevo vehículo",
+      "delete": "Eliminar vehículo",
+      "save": "Guardar datos del vehículo",
+      "update": "Actualizar vehículo"
     }
   },
   "invoices" : {
@@ -277,6 +296,7 @@
     "buttons": {
       "add": "Crear nueva aseguradora",
       "delete": "Eliminar aseguradora",
+      "save": "Guardar datos de la aseguradora",
       "update": "Actualizar aseguradora"
     },
     "text": { }

@@ -10,7 +10,7 @@
 <div class="row">  
     <div class="col-sm-12">
         <div class="btn-group pull-right btn-toolbar" role="group">
-            <a href="#/vehicles/create" class="btn btn-default btn-sm" title="">
+            <a href="#/vehicles/create" class="btn btn-default btn-sm" title="{{'vehicles.buttons.add' | translate}}">
                 <i class="fa fa-plus"></i>
             </a>
         </div>
@@ -41,8 +41,8 @@
                             <div class="text-center">
                                 <div class="btn-group">
                                 	<a href="#/invoices/create/{{item.id}}" class="btn btn-primary btn-xs" title=""><i class="fa fa-file"></i></a>
-                                    <a href="#/vehicles/update/{{item.id}}" class="btn btn-primary btn-xs" title=""><i class="fa fa-pencil"></i></a>
-                                    <a href="#" class="btn btn-danger btn-xs" title="" data-ng-click="ctrl.onConfirmDeleteClick(item)" onclick="return false;"><i class="fa fa-remove"></i></a>
+                                    <a href="#/vehicles/update/{{item.id}}" class="btn btn-primary btn-xs" title="{{'vehicles.buttons.update' | translate}}"><i class="fa fa-pencil"></i></a>
+                                    <a href="#" class="btn btn-danger btn-xs" title="{{'vehicles.buttons.delete' | translate}}" data-ng-click="ctrl.onConfirmDeleteClick(item)" onclick="return false;"><i class="fa fa-remove"></i></a>
                                 </div>
                             </div>
                         </td>

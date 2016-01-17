@@ -4,7 +4,7 @@ angular.module('cpFacturasApp').factory('insurerService', ['$resource', '$http',
 
 	var mixing = {};
 	
-    mixing.resource = $resource(myConfig.apiUrl + '/insurers/:id', {key: '@id'}, {
+    mixing.resource = $resource(myConfig.apiUrl + '/insurers/:id', {id: '@id'}, {
         search : {method: 'GET'},
         update: {method: 'PUT'},
         remove: {method: 'DELETE'}
