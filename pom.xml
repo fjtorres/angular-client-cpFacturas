@@ -13,18 +13,44 @@
 		<wro4j.version>1.7.9</wro4j.version>
 	</properties>
 
+	<profiles>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			
+			<properties>
+				<server.url>http://localhost:8080/server/api</server.url>
+			</properties>
+		</profile>
+		<profile>
+			<id>DEV</id>			
+			<properties>
+				<server.url>http://localhost:8080/cpFacturasServer/api</server.url>
+			</properties>
+		</profile>
+	</profiles>
+
 	<build>
+		<finalName>cpFacturasClient</finalName>
+	
 		<resources>
 			<resource>
 				<directory>${project.basedir}/src/main/resources</directory>
 			</resource>
 			<resource>
 				<directory>${project.build.directory}/generated-resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>${project.basedir}/src/main/webapp</directory>
+				<targetPath>${project.build.directory}/classes/static</targetPath>
 			</resource>
 		</resources>
 
 		<plugins>
-		
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -34,7 +60,7 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
