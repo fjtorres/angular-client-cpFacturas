@@ -21,7 +21,7 @@
 			</activation>
 			
 			<properties>
-				<server.url>http://localhost:8080/server/api</server.url>
+				<server.url>http://localhost:8080/cpFacturasServer/api</server.url>
 			</properties>
 		</profile>
 		<profile>
