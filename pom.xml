@@ -8,8 +8,10 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
-		<spring.boot.version>1.2.5.RELEASE</spring.boot.version>
+		<start-class>com.github.fjtorres.cpFacturas.client.angular.Application</start-class>
+		<java.source.version>1.8</java.source.version>
+		<java.target.version>1.7</java.target.version>
+		<spring.boot.version>1.3.5.RELEASE</spring.boot.version>
 		<wro4j.version>1.7.9</wro4j.version>
 	</properties>
 
@@ -26,6 +28,12 @@
 		</profile>
 		<profile>
 			<id>DEV</id>			
+			<properties>
+				<server.url>http://localhost:8080/cpFacturasServer/api</server.url>
+			</properties>
+		</profile>
+		<profile>
+			<id>openshift</id>			
 			<properties>
 				<server.url>http://localhost:8080/cpFacturasServer/api</server.url>
 			</properties>
@@ -56,8 +64,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
+					<source>${java.source.version}</source>
+					<target>${java.target.version}</target>
 				</configuration>
 			</plugin>
 

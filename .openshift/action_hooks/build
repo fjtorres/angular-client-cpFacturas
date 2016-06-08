@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd $OPENSHIFT_REPO_DIR
+
+mvn clean install -Popenshift -DskipTests=true >> build.log
