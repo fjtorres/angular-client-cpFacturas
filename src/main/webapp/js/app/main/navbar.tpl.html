@@ -1,0 +1,100 @@
+<div class="container-fluid" ng-controller="menuController">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="#/">{{ appTitle }} - <small>v{{appVersion}}</small></a>
+
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            
+            <li class="dropdown" data-ng-class="{ active: isActiveGroup('/invoices')}">
+
+                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" onclick="return false;">{{ 'menu.invoice.title' | translate }} <span class="caret"></span></a>
+
+                <ul class="dropdown-menu" role="menu">
+                    <li data-ng-class="{ active: isActive('/invoices/create')}"><a href="#/invoices/create">{{ 'menu.invoice.create' | translate }}</a></li>
+                    <li data-ng-class="{ active: isActive('/invoices')}"><a href="#/invoices">{{ 'menu.invoice.list' | translate }}</a></li>
+                    <li class="divider"></li>
+                    <li data-ng-class="{ active: isActive('/invoices/reports/last/month')}"><a href="#/invoices/reports/last/month">{{ 'menu.invoice.lastMonthReport' | translate }}</a></li>
+                </ul>
+
+            </li>
+
+            <li class="dropdown" data-ng-class="{ active: isActiveGroup('/customers')}">
+
+                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" onclick="return false;">{{ 'menu.customer.title' | translate }} <span class="caret"></span></a>
+
+                <ul class="dropdown-menu" role="menu">
+                    <li data-ng-class="{ active: isActive('/customers/create')}"><a href="#/customers/create">{{ 'menu.customer.create' | translate }}</a></li>
+                    <li data-ng-class="{ active: isActive('/customers')}"><a href="#/customers">{{ 'menu.customer.list' | translate }}</a></li>
+                </ul>
+
+            </li>
+
+<!--             <li class="dropdown" ng-class="{ active: isActiveGroup('/companies')}"> -->
+
+<!--                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="return false;">{{ 'menu.company.title' | translate }} <span class="caret"></span></a> -->
+
+<!--                 <ul class="dropdown-menu" role="menu"> -->
+<!--                     <li ng-class="{ active: isActive('/companies/create')}"><a href="#/companies/create">{{ 'menu.company.create' | translate }}</a></li> -->
+<!--                     <li ng-class="{ active: isActive('/companies')}"><a href="#/companies">{{ 'menu.company.list' | translate }}</a></li> -->
+<!--                 </ul> -->
+
+<!--             </li> -->
+
+            <li class="dropdown" data-ng-class="{ active: isActiveGroup('/vehicles')}">
+
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="return false;">{{ 'menu.vehicle.title' | translate }} <span class="caret"></span></a>
+
+                <ul class="dropdown-menu" role="menu">
+                    <li data-ng-class="{ active: isActive('/vehicles/create')}"><a href="#/vehicles/create">{{ 'menu.vehicle.create' | translate }}</a></li>
+                    <li data-ng-class="{ active: isActive('/vehicles')}"><a href="#/vehicles">{{ 'menu.vehicle.list' | translate }}</a></li>
+                </ul>
+
+            </li>
+
+            <li class="dropdown" data-ng-class="{ active: isActiveGroup('/insurers') || isActiveGroup('/proficient')}">
+
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="return false;">Aseguradoras <span class="caret"></span></a>
+
+                <ul class="dropdown-menu" role="menu">
+                    <li data-ng-class="{ active: isActive('/insurers/create')}"><a href="#/insurers/create">Nueva</a></li>
+                    <li data-ng-class="{ active: isActive('/insurers')}"><a href="#/insurers">Listado</a></li>
+                    <li class="divider"></li>
+                    <li data-ng-class="{ active: isActive('/proficient')}"><a href="#/proficient">Peritos</a></li>
+                    <li data-ng-class="{ active: isActive('/proficient/create')}"><a href="#/proficient/create">Nuevo perito</a></li>
+                </ul>
+
+            </li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="return false;" title="{{'lang.selector' | translate}}">
+                    <i class="fa fa-language"></i>&nbsp;{{'lang.title' | translate}} <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li data-ng-class="{active: currentLanguage() == 'es'}">
+                        <a href="" data-ng-click="changeLanguage('es')" title="{{'lang.spanish' | translate}}"><span class="flag-icon flag-icon-es"></span>&nbsp;{{'lang.spanish' | translate}}</a>
+                    </li>
+                    <li data-ng-class="{active: currentLanguage() == 'en'}">
+                        <a href="" data-ng-click="changeLanguage('en')" title="{{'lang.english' | translate}}"><span class="flag-icon flag-icon-us"></span>&nbsp;{{'lang.english' | translate}}</a>
+                    </li>
+                </ul>
+            </li>
+            
+        </ul>
+
+        <p class="navbar-text navbar-right navbar-user">{{'menu.username' | translate}}: {{user.username}}&nbsp;&nbsp;<a href="#" data-ng-click="logout()" onclick="return false;" title="{{'menu.logout' | translate}}"><i class="fa fa-sign-out"></i></a></p>
+    </div>
+
+</div>

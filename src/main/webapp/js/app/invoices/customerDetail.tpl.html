@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h4 class="panel-title">{{'invoices.text.customer' | translate}}</h4>
+	</div>
+	<div class="panel-body invoice-panel-body">
+		<div>
+			<label><strong>{{'invoices.text.billToCustomer' | translate}}</strong>:&nbsp;<input type="radio" data-ng-model="ctrl.invoiceToType" value="1"/></label>
+		</div>
+		<div>
+			<strong>{{'customers.field.code' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.customer.code}}</span>
+		</div>
+		<div>
+			<strong>{{'customers.field.firstName' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.customer.firstName}}</span>
+		</div>
+		<div>
+			<strong>{{'customers.field.lastName' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.customer.lastName}}</span>
+		</div>
+		<div>
+			<strong>{{'messages.phonenumber' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.customer.contactData.firstPhoneNumber}}</span>
+		</div>
+		<div>
+			<strong>{{'messages.email' | translate}}</strong>:&nbsp;<span>{{ctrl.entity.vehicle.customer.contactData.email}}</span>
+		</div>
+	</div>
+</div>

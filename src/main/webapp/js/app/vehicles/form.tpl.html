@@ -1,0 +1,113 @@
+<div class="row">
+    
+    <div class="col-sm-6">
+    
+    	<div class="form-group">
+            <label for="txtVehicleRegistration" class="control-label col-sm-3">{{'vehicles.field.registration' | translate}}</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control col-sm-3" id="txtVehicleRegistration" placeholder="{{'vehicles.field.registration.placeholder' | translate}}"
+                    maxlength="25" data-ng-model="ctrl.entity.registration" data-ng-disabled="ctrl.isUpdate" required tabindex="1" data-ng-model-options="{ updateOn: 'submit' }"/>
+            </div>
+        </div>
+    
+	</div>
+	
+	<div class="clearfix" />
+	
+	<div class="col-sm-6">
+	
+	    <div class="form-group">
+            <label for="txtVehicleBrand" class="control-label col-sm-3">{{'vehicles.field.brand' | translate}}</label>
+            <div class="col-sm-5">
+            	<select id="txtVehicleBrand" class="form-control" data-ng-model="ctrl.selectedBrand"
+            		data-ng-options="item.name group by (item.group | translate) for item in ctrl.brands | orderBy:['group']"
+            		data-ng-change="ctrl.onBrandChange()" required tabindex="2">
+            		<option value="-1">{{'messages.select' | translate}}</option>
+            	</select>
+            </div>
+        </div>
+	
+	</div>
+	
+	<div class="col-sm-6">
+	
+	    <div class="form-group">
+            <label for="txtVehicleModel" class="control-label col-sm-3">{{'vehicles.field.model' | translate}}</label>
+            <div class="col-sm-5">
+            	<select id="txtVehicleModel" class="form-control" data-ng-model="ctrl.entity.model"  data-ng-options="item.name for item in ctrl.models" required tabindex="3">
+            		<option value="-1">{{'messages.select' | translate}}</option>
+            	</select>
+            </div>
+        </div>
+	
+	</div>
+	
+	<div class="col-sm-6">
+    
+    	<div class="form-group">
+            <label for="txtVehicleYear" class="control-label col-sm-3">{{'vehicles.field.year' | translate}}</label>
+            <div class="col-sm-5">
+                <select id="txtVehicleYear" class="form-control" data-ng-model="ctrl.entity.year" data-ng-options="item for item in ctrl.years" tabindex="4">
+            		<option value="-1">{{'messages.select' | translate}}</option>
+            	</select>
+            </div>
+        </div>
+    
+	</div>
+	
+	<div class="col-sm-6">
+    
+    	<div class="form-group">
+            <label for="txtVehicleDoors" class="control-label col-sm-3">{{'vehicles.field.doors' | translate}}</label>
+            <div class="col-sm-5">
+                <select id="txtVehicleDoors" class="form-control" data-ng-model="ctrl.entity.doors" data-ng-options="item for item in ctrl.doors" tabindex="5">
+            		<option value="-1">{{'messages.select' | translate}}</option>
+            	</select>
+            </div>
+        </div>
+    
+	</div>
+	
+		
+	<div class="col-sm-6">
+    
+    	<div class="form-group">
+            <label for="txtVehicleFuelType" class="control-label col-sm-3">{{'vehicles.field.fuelType' | translate}}</label>
+            <div class="col-sm-5">
+                <select id="txtVehicleFuelType" class="form-control" data-ng-model="ctrl.entity.fuelType" data-ng-options="item as 'messages.enum.fuelType.' + item | translate for item in ctrl.fuelTypeList" tabindex="6">
+            		<option value="-1">{{'messages.select' | translate}}</option>
+            	</select>
+            </div>
+        </div>
+    
+	</div>
+	
+	<div class="col-sm-6">
+	
+	    <div class="form-group">
+            <label for="txtVehicleCustomer" class="control-label col-sm-3">{{'vehicles.field.customer' | translate}}</label>
+            <div class="col-sm-5">
+                <input autocomplete='off' type="text" class="form-control col-sm-3" id="txtVehicleCustomer" placeholder="{{'vehicles.field.customer' | translate}}"
+                    maxlength="25" data-ng-model="ctrl.entity.customer" data-ng-disabled="isUpdate" required tabindex="7"
+                    data-typeahead="item as item.code + ' - ' + item.firstName + ' ' + item.lastName for item in ctrl.getCustomers($viewValue)" data-typeahead-min-length="3" data-typeahead-loading="loadingCustomers"/>
+                <i data-ng-show="loadingCustomers" class="glyphicon glyphicon-refresh"></i>
+            </div>
+        </div>
+	
+	</div>
+	
+	<div class="col-sm-6">
+	
+	    <div class="form-group">
+            <label for="txtVehicleInsurer" class="control-label col-sm-3">{{'vehicles.field.insurer' | translate}}</label>
+            <div class="col-sm-5">
+                <input autocomplete='off' type="text" class="form-control col-sm-3" id="txtVehicleInsurer" placeholder="{{'vehicles.field.insurer' | translate}}"
+                    maxlength="25" data-ng-model="ctrl.entity.insurer" data-ng-disabled="isUpdate" tabindex="8"
+                    data-typeahead="item as item.code + ' - ' + item.name for item in ctrl.getInsurers($viewValue)" data-typeahead-min-length="3" data-typeahead-loading="loadingInsurers"/>
+                <i data-ng-show="loadingInsurers" class="glyphicon glyphicon-refresh"></i>
+            </div>
+        </div>
+	
+	</div>
+	
+</div>

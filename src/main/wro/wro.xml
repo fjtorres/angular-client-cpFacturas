@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups xmlns="http://www.isdc.ro/wro"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.isdc.ro/wro wro.xsd">
+
+	<group name="angular-bootstrap">
+<!-- 		<css>classpath:META-INF/resources/webjars/bootstrap/3.3.4/less/bootstrap.less</css> -->
+<!-- 		<css>classpath:META-INF/resources/webjars/bootstrap/3.3.4/less/theme.less</css> -->
+<!-- 		<css>classpath:META-INF/resources/webjars/font-awesome/4.4.0/less/font-awesome.less</css> -->
+<!-- 		<css>classpath:META-INF/resources/webjars/flag-icon-css/0.7.1/less/flag-icon.less</css> -->
+<!-- 		<css>classpath:META-INF/resources/webjars/bootstrap/3.3.4/css/bootstrap.min.css</css> -->
+<!-- 		<css>classpath:META-INF/resources/webjars/bootstrap/3.3.4/css/bootstrap-theme.min.css</css> -->
+<!-- 		<css>classpath:META-INF/resources/webjars/font-awesome/4.4.0/css/font-awesome.min.css</css> -->
+<!-- 		<css>classpath:META-INF/resources/webjars/flag-icon-css/0.7.1/css/flag-icon.min.css</css> -->
+		<js>webjar:jquery/2.1.1/jquery.min.js</js>
+		<js>webjar:angularjs/1.4.4/angular.min.js</js>
+		<js>webjar:angularjs/1.4.4/angular-route.min.js</js>
+		<js>webjar:angularjs/1.4.4/angular-cookies.min.js</js>
+		<js>webjar:angularjs/1.4.4/angular-animate.min.js</js>
+		<js>webjar:angular-resource/1.4.5/angular-resource.min.js</js>
+		<js>webjar:angular-translate/2.7.2/angular-translate.min.js</js>
+<!-- 		<js>webjar:angular-translate-loader-static-files/2.6.1-1/angular-translate-loader-static-files.min.js</js> -->
+		<js>webjar:bootstrap/3.3.4/js/bootstrap.min.js</js>
+	</group>
+	
+	<group name="angular-app">
+		<css>file:${project.basedir}/src/main/wro/main.less</css>
+	
+		<!-- APP Module -->
+		<js>file:${project.basedir}/src/main/webapp/js/app/app.js</js>
+		<js>file:${project.basedir}/src/main/webapp/js/app/app.run.js</js>
+		<js>file:${project.basedir}/src/main/webapp/js/app/generic/genericService.js</js>
+		<js>file:${project.basedir}/src/main/webapp/js/app/generic/enumService.js</js>
+		
+    	<!-- Main module -->
+		<js>file:${project.basedir}/src/main/webapp/js/app/main/menuController.js</js>
+	    <js>file:${project.basedir}/src/main/webapp/js/app/main/mainController.js</js>
+	    <js>file:${project.basedir}/src/main/webapp/js/app/main/messagesController.js</js>
+	    <js>file:${project.basedir}/src/main/webapp/js/app/main/confirmController.js</js>
+	
+	    <!-- Customer module -->
+	    <js>file:${project.basedir}/src/main/webapp/js/app/customers/customersService.js</js>
+	    <js>file:${project.basedir}/src/main/webapp/js/app/customers/customerListController.js</js>
+	    <js>file:${project.basedir}/src/main/webapp/js/app/customers/customerController.js</js>
+	
+	    <!-- Invoice module -->
+	    <js>file:${project.basedir}/src/main/webapp/js/app/invoices/invoiceService.js</js>
+	    <js>file:${project.basedir}/src/main/webapp/js/app/invoices/invoiceController.js</js>    
+	    <js>file:${project.basedir}/src/main/webapp/js/app/invoices/invoiceListController.js</js>
+	    <js>file:${project.basedir}/src/main/webapp/js/app/invoices/modalInvoiceLineController.js</js>
+	    
+	    <!-- Insure module -->
+	    <js>file:${project.basedir}/src/main/webapp/js/app/insurers/insurerService.js</js>
+	    <js>file:${project.basedir}/src/main/webapp/js/app/insurers/insurerController.js</js>
+	    <js>file:${project.basedir}/src/main/webapp/js/app/insurers/insurerListController.js</js>
+	    
+	    <!-- Vehicle module -->
+	    <js>file:${project.basedir}/src/main/webapp/js/app/vehicles/vehiclesService.js</js>
+	    <js>file:${project.basedir}/src/main/webapp/js/app/vehicles/vehicleListController.js</js>
+	    <js>file:${project.basedir}/src/main/webapp/js/app/vehicles/vehicleController.js</js>
+	    
+	    <!-- Administration module -->
+	    <js>file:${project.basedir}/src/main/webapp/js/app/admin/loginController.js</js>
+	    <js>file:${project.basedir}/src/main/webapp/js/app/admin/userController.js</js>
+	    <js>file:${project.basedir}/src/main/webapp/js/app/admin/userService.js</js>
+	    <js>file:${project.basedir}/src/main/webapp/js/app/admin/authenticationService.js</js>
+	</group>
+</groups>

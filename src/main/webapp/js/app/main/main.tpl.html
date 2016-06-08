@@ -1,0 +1,51 @@
+<div class="text-center page-header">
+    <h1>{{appTitle}}&nbsp;-&nbsp;<small>v{{appVersion}}</small></h1>
+</div>
+
+<div class="row shortcut-row shortcut-start-row">
+    <div class="col-sm-4 text-center">
+        <div class="shortcut-item" data-ng-click="newInvoice()">
+            <i class="fa fa-file fa-3"></i>
+            <h5>{{'home.newInvoice.title' | translate}}</h5>
+            <p>{{'home.newInvoice.description' | translate}}</p>
+        </div>
+    </div>
+    <div class="col-sm-4 text-center">
+        <div class="shortcut-item" data-ng-click="showInvoices()">
+            <i class="fa fa-file-text fa-3"></i>
+            <h5>{{'home.invoicesList.title' | translate}}</h5>
+            <p>{{'home.invoicesList.description' | translate}}</p>
+        </div>
+    </div>
+    <div class="col-sm-4 text-center">
+        <div class="shortcut-item" data-ng-click="showCustomers()">
+            <i class="fa fa-users fa-3"></i>
+            <h5>{{'home.customersList.title' | translate}}</h5>
+            <p>{{'home.customersList.description' | translate}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="row shortcut-row">
+    <div class="col-sm-4 text-center">
+        <div class="shortcut-item" data-ng-click="showInsurers()">
+            <i class="fa fa-institution fa-3"></i>
+            <h5>{{'home.insurersList.title' | translate}}</h5>
+            <p>{{'home.insurersList.description' | translate}}</p>
+        </div>
+    </div>
+    <div class="col-sm-4 text-center">
+        <div class="shortcut-item" data-ng-click="showVehicles()">
+            <i class="fa fa-car fa-3"></i>
+            <h5>{{'home.vehiclesList.title' | translate}}</h5>
+            <p>{{'home.vehiclesList.description' | translate}}</p>
+        </div>
+    </div>
+     <div class="col-sm-4 text-center">
+        <div class="shortcut-item" data-ng-click="showConfiguration()">
+            <i class="fa fa-gear fa-3"></i>
+            <h5>{{'home.configuration.title' | translate}}</h5>
+            <p>{{'home.configuration.description' | translate}}</p>
+        </div>
+    </div>
+</div>

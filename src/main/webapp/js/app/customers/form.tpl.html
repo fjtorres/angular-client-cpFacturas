@@ -1,0 +1,142 @@
+<input type="hidden" data-ng-model="ctrl.entity.id" />
+<input type="hidden" data-ng-model="ctrl.entity.type" />
+
+<div class="row">
+    
+    <div class="col-sm-6">
+
+        <div class="form-group form-group-sm">
+            <label for="txtCustomerCode" class="control-label col-sm-3">{{'customers.field.code' | translate}}</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control col-sm-3" id="txtCustomerCode" placeholder="{{'customers.field.code.placeholder' | translate}}"
+                    maxlength="20" required tabindex="1" data-ng-model="ctrl.entity.code" data-ng-disabled="ctrl.isUpdate" data-ng-model-options="{ updateOn: 'submit' }"/>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="clearfix"></div>
+
+    <div class="col-sm-6">
+
+        <div class="form-group form-group-sm">
+            <label for="txtCustomerFirstName" class="control-label col-sm-3">{{'customers.field.firstName' | translate}}</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="txtCustomerFirstName" placeholder="{{'customers.field.firstName.placeholder' | translate}}"
+                    maxlength="100" required tabindex="2" data-ng-model="ctrl.entity.firstName" data-ng-model-options="{ updateOn: 'submit' }"/>
+            </div>
+        </div>
+
+        <div class="form-group form-group-sm">
+            <label for="txtCustomerLastName" class="control-label col-sm-3">{{'customers.field.lastName' | translate}}</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="txtCustomerLastName" placeholder="{{'customers.field.lastName.placeholder' | translate}}"
+                    maxlength="100" required tabindex="3" data-ng-model="ctrl.entity.lastName" data-ng-model-options="{ updateOn: 'submit' }"/>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-sm-6">
+
+        <div class="form-group form-group-sm">
+            <label for="txtCustomerEmail" class="control-label col-sm-3">{{'messages.email' | translate}}</label>
+            <div class="col-sm-9">
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <input type="email" class="form-control" id="txtCustomerEmail" placeholder="{{'messages.email.placeholder' | translate}}"
+                        maxlength="100" tabindex="4" data-ng-model="ctrl.entity.contactData.email" data-ng-model-options="{ updateOn: 'submit' }"/>
+                </div>
+            </div>
+        </div>
+        
+		<div class="form-group form-group-sm">
+			<label for="txtCustomerAddress" class="control-label col-sm-3">{{'messages.address' | translate}}</label>
+            <div class="col-sm-9">
+				<textarea class="form-control" id="txtCustomerAddress" placeholder="{{'messages.address.placeholder' | translate}}"
+					maxlength="250" tabindex="5" data-ng-model="ctrl.entity.contactData.address" data-ng-model-options="{ updateOn: 'submit' }"
+					rows="3" cols="75"></textarea>
+            </div>
+		</div>
+
+    </div>
+
+</div>
+
+<fieldset>
+	<legend>{{'messages.phonenumbers' | translate}}</legend>
+	
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="form-group">
+	            <label for="txtCustomerFirstPhoneNumber" class="control-label col-sm-3">{{'messages.phonenumber' | translate}}</label>
+	            <div class="col-sm-9">
+	                <div class="input-group">
+	                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+	                    <input type="tel" class="form-control" id="txtCustomerFirstPhoneNumber" placeholder="{{'messages.phonenumber.placeholder' | translate}}"
+	                        maxlength="12" required tabindex="6" data-ng-model="ctrl.entity.contactData.firstPhoneNumber" data-ng-model-options="{ updateOn: 'submit' }"/>
+	                </div>
+	            </div>
+	        </div>
+		
+			<div class="form-group">
+	            <label for="txtCustomerSecondPhoneNumber" class="control-label col-sm-3">{{'messages.phonenumber' | translate}}</label>
+	            <div class="col-sm-9">
+	                <div class="input-group">
+	                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+	                    <input type="tel" class="form-control" id="txtCustomerSecondPhoneNumber" placeholder="{{'messages.phonenumber.placeholder' | translate}}"
+	                        maxlength="12" tabindex="7" data-ng-model="ctrl.entity.contactData.secondPhoneNumber" data-ng-model-options="{ updateOn: 'submit' }"/>
+	                </div>
+	            </div>
+	        </div>
+	        
+			<div class="form-group">
+	            <label for="txtCustomerThirdPhoneNumber" class="control-label col-sm-3">{{'messages.phonenumber' | translate}}</label>
+	            <div class="col-sm-9">
+	                <div class="input-group">
+	                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+	                    <input type="tel" class="form-control" id="txtCustomerThirdPhoneNumber" placeholder="{{'messages.phonenumber.placeholder' | translate}}"
+	                        maxlength="12" tabindex="8" data-ng-model="ctrl.entity.contactData.thirdPhoneNumber" data-ng-model-options="{ updateOn: 'submit' }"/>
+	                </div>
+	            </div>
+	        </div>
+	    
+			<div class="form-group">
+	            <label for="txtCustomerFourthPhoneNumber" class="control-label col-sm-3">{{'messages.phonenumber' | translate}}</label>
+	            <div class="col-sm-9">
+	                <div class="input-group">
+	                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+	                    <input type="tel" class="form-control" id="txtCustomerFourthPhoneNumber" placeholder="{{'messages.phonenumber.placeholder' | translate}}"
+	                        maxlength="12" tabindex="9" data-ng-model="ctrl.entity.contactData.fourthPhoneNumber" data-ng-model-options="{ updateOn: 'submit' }"/>
+	                </div>
+	            </div>
+	        </div>
+			
+	    </div>
+    
+	    <div class="col-sm-6">
+			<div class="form-group">
+	            <label for="txtCustomerFirstFax" class="control-label col-sm-3">{{'messages.fax' | translate}}</label>
+	            <div class="col-sm-9">
+	                <div class="input-group">
+	                    <span class="input-group-addon"><i class="fa fa-fax"></i></span>
+	                    <input type="tel" class="form-control" id="txtCustomerFirstFax" placeholder="{{'messages.fax.placeholder' | translate}}"
+	                        maxlength="12" tabindex="10" data-ng-model="ctrl.entity.contactData.firstFax" data-ng-model-options="{ updateOn: 'submit' }"/>
+	                </div>
+	            </div>
+	        </div>
+	    
+			<div class="form-group">
+	            <label for="txtCustomerSecondFax" class="control-label col-sm-3">{{'messages.fax' | translate}}</label>
+	            <div class="col-sm-9">
+	                <div class="input-group">
+	                    <span class="input-group-addon"><i class="fa fa-fax"></i></span>
+	                    <input type="tel" class="form-control" id="txtCustomerSecondFax" placeholder="{{'messages.fax.placeholder' | translate}}"
+	                        maxlength="12" tabindex="11" data-ng-model="ctrl.entity.contactData.secondFax" data-ng-model-options="{ updateOn: 'submit' }"/>
+	                </div>
+	            </div>
+	        </div>
+	    </div>  
+	</div>
+	
+</fieldset>

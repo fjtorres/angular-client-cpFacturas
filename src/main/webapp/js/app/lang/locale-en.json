@@ -1,0 +1,307 @@
+{
+  "app": {
+    "title": "C&P Invoices"
+  },
+  "lang": {
+    "title": "Languages",
+    "selector": "Languages selector",
+    "spanish": "Spanish",
+    "english": "English"
+  },
+  "buttons": {
+    "access": "Access",
+    "add": "Add",
+    "back": "Back",
+    "back.title": "Back to the previous window",
+    "cancel": "Cancel",
+    "clear": "Clear",
+    "clear.title": "Clear form data",
+    "logout": "Salir",
+    "no" : "No",
+    "save": "Save",
+    "yes" : "Yes"
+  },
+  "messages" : {
+  	"address": "Address",
+  	"address.placeholder": "Enter the address",
+  	"confirmation" : {
+      "title" : "Operation confirmation"
+    },
+    "cost": "Cost",
+    "creationDate": "Created",
+	"email": "E-mail",
+	"email.placeholder": "Enter the e-mail",
+	"empty.result": "No results were found",
+	"enum": {
+		"customerType": {
+	      	"PERSON": "Private",
+	      	"COMPANY": "Company"
+		},
+		"fuelType": {
+			"Diesel": "Diesel",
+			"Hybrid": "Hybrid",
+			"Electric": "Electric",
+			"Petrol": "Petrol"
+		},
+		"invoiceState": {
+			"CANCELED": "Canceled",
+			"CREATED": "Created",
+			"GENERATED": "Generated",
+			"PAID": "Paid"
+		}
+	},
+	"fax": "Fax",
+	"fax.placeholder": "Enter the fax number",
+    "lastUpdateDate": "Updated",
+    "loader": "Loading ...",
+    "phonenumbers": "Phones",
+	"phonenumber": "Phone",
+	"phonenumber.placeholder": "Enter the phone number",
+	"select": "Select...",
+	"taxRate": "Tax rate",
+	"taxRate": "Enter tax rate",
+	"total": "Total",
+	"totalWithTax": "Total tax"
+  },
+  "login" : {
+    "title" : "Log in",
+    "username" : "Enter the username",
+    "password" : "Enter password",
+    "rememberMe": "Remember me in this computer"
+  },
+  "menu": {
+    "invoice": {
+      "title": "Invoices",
+      "create": "New",
+      "update": "Update",
+      "list": "List",
+      "lastMonthReport" : "Invoicing for the last month"
+    },
+    "customer": {
+      "title": "Customers",
+      "create": "New",
+      "list": "List"
+    },
+    "company": {
+      "title": "Business clients",
+      "create": "New",
+      "list": "List"
+    },
+    "vehicle": {
+      "title": "Vehicles",
+      "create": "New",
+      "list": "List"
+    },
+    "logout" : "System logout",
+    "username" : "User" 
+  },
+  "home": {
+  	"newInvoice": {
+  		"title": "New invoice",
+  		"description": "Create new invoice on system"
+  	},
+  	"invoicesList": {
+  		"title": "Invoices",
+  		"description": "Show invoices list"
+  	},
+  	"customersList": {
+  		"title": "Customers",
+  		"description": "Show customers list"
+  	},
+  	"insurersList": {
+  		"title": "Insurers",
+  		"description": "Show insurers list"
+  	},
+  	 "vehiclesList": {
+  		"title": "Vehicles",
+  		"description": "Show vehicles list"
+  	},
+  	"configuration": {
+  		"title": "Configuration",
+  		"description": "System configuration"
+  	}
+  },
+  "customers": {
+    "view": {
+      "list": "Customers list",
+      "create": "New customer",
+      "update": "Update customer data"
+    },
+    "field": {
+      "code": "Code",
+      "code.placeholder": "Enter the code",
+      "firstName": "First name",
+      "firstName.placeholder": "Enter the first name",
+      "lastName": "Last name",
+      "lastName.placeholder": "Enter the last name"
+    },
+    "messages" : {
+      "delete": {
+        "confirmation" : "Are you sure remove selected customer?",
+        "success": "You have successfully removed the customer."
+      },
+      "create": {
+        "success": "You have successfully created the customer."
+      },
+      "update": {
+        "success": "You have successfully updated customer data."
+      },
+      "save": {
+      	"title": "Save customer data"
+      }
+    },
+	"buttons": {
+      "add": "Add new customer",
+      "delete": "Remove customer",
+      "save": "Save customer data",
+      "update": "Update customer"
+    }
+  },
+  "companies": {
+    "view": {
+      "list": "Business clients list",
+      "create": "New business client",
+      "update": "Update business client data"
+    },
+    "field": {}
+  },
+  "vehicles": {
+    "view": {
+      "list": "Vehicles list",
+      "create": "New vehicle",
+      "update": "Update vehicle data"
+    },
+    "field": {
+      "registration": "Registration",
+      "registration.placeholder": "Enter the registration",
+      "customer": "Customer",
+      "brand": "Brand",
+      "model": "Model",
+      "year": "Year",
+      "doors": "Number of doors",
+      "fuelType": "Fuel type",
+      "insurer": "Insurer"
+    },
+    "messages": {
+      "delete": {
+        "confirmation": "Are you sure remove selected vehicle?",
+        "success": "You have successfully removed the vehicle."
+      },
+      "create": {
+        "success": "You have successfully created the vehicle."
+      },
+      "update": {
+        "success": "You have successfully updated vehicle data."
+      },
+      "groupBy": {
+        "general": "General",
+        "others": "Others"
+      }
+    },
+	"buttons": {
+      "add": "Add new vehicle",
+      "delete": "Remove vehicle",
+      "save": "Save vehicle data",
+      "update": "Update vehicle"
+    }
+  },
+  "invoices" : {
+  	"view": {
+      "list": "Invoices list",
+      "create": "New invoice",
+      "update": "Update invoice data"
+  	},
+    "field": {
+      "state": "State",
+      "vehicle": "Vehicle",
+      "vehicle.placeholder": "Enter vehicle registration",
+      "customer": "Customer",
+      "observations": "Observations",
+      "lines": "Invoice lines"
+    },
+    "messages": {
+      "delete": {
+        "confirmation": "Are you sure remove selected invoice?",
+        "success": "You have successfully removed the invoice."
+      },
+      "create": {
+        "success": "You have successfully created the invoice."
+      },
+      "update": {
+        "success": "You have successfully updated invoice data."
+      }
+    },
+    "buttons": {
+      "add": "Add new invoice",
+      "delete": "Remove invoice",
+      "update": "Update invoice",
+      "selectVehicle": "Select other vehicle",
+      "add.line": "Add line to invoice"
+    },
+    "text": {
+      "vehicle": "Vehicle data",
+      "customer": "Owner data",
+      "insurer": "Insurer data",
+      "billToCustomer": "Bill to customer",
+      "billToInsurer": "Bill to insurer"
+    },
+  "invocesLine": {
+    "views": {
+      "modal": "Line data"
+    },
+    "field": {
+        "description": "Descriprion",
+        "description.placeholder": "Enter line description",
+        "amount": "Amount",
+        "amount.placeholder": "Enter amount",
+        "price": "Price",
+        "price.placeholder": "Enter price",
+        "discount": "Discount",
+        "discount.placeholder": "Enter discount"
+    },
+    "messages": {
+      "delete": {
+        "confirmation": "Are you sure remove selected invoice line?",
+        "success": "You have successfully removed the invoice line."
+      },
+      "create": {
+        "success": "You have successfully created the invoice line."
+      },
+      "update": {
+        "success": "You have successfully updated invoice line data."
+      }
+    }
+  },
+  "insurers" : {
+  	"view": {
+      "list": "Insurers list",
+      "create": "New insurer",
+      "update": "Update insurer data"
+  	},
+    "field": {
+      "code": "Code",
+      "code.placeholder": "Enter the code",
+      "name": "First name",
+      "name.placeholder": "Enter the first name"
+    },
+    "messages": {
+      "delete": {
+        "confirmation": "Are you sure remove selected insurer?",
+        "success": "You have successfully removed the insurer."
+      },
+      "create": {
+        "success": "You have successfully created the insurer."
+      },
+      "update": {
+        "success": "You have successfully updated insurer data."
+      }
+    },
+    "buttons": {
+      "add": "Add new insurer",
+      "delete": "Remove insurer",
+      "save": "Save insurer data",
+      "update": "Update insurer"
+    },
+    "text": { }
+  }
+}

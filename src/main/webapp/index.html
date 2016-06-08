@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es" data-ng-app="cpFacturasApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title data-ng-bind="appTitle + ' - v' + appVersion"></title>
+	<link rel="stylesheet" href="webjars/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="webjars/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="webjars/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="webjars/flag-icon-css/0.7.1/css/flag-icon.min.css">
+	<link rel="stylesheet" href="css/angular-app.css">
+	<style type="text/css">
+		.ng-cloack {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div>
+	    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" data-ng-if="loggedInUser" data-ng-include="'js/app/main/navbar.tpl.html'"></nav>
+	
+	    <div class="content">
+	        
+	        <div class="container-fluid">
+	            <div class="row">
+	                <div class="col-sm-12" data-ng-include="'js/app/main/messages.tpl.html'"></div>
+	            </div>
+	        </div>  
+	
+	        <div class="container-fluid">
+	        	<div class="slide" data-ng-view data-ng-cloak></div>
+	        </div>
+	
+	    </div>
+	
+	<!-- 	<div id="page-loader" class="hidden"> -->
+	<!-- 		<div class="loader-overlay"> -->
+	<!-- 			<div class="loader">{{'messages.loader' | translate}}</div> -->
+	<!-- 		</div> -->
+	<!-- 	</div> -->
+	</div>
+
+     <script src="js/angular-bootstrap.js"></script>
+     <script src="http://rawgit.com/angular-translate/bower-angular-translate-loader-static-files/master/angular-translate-loader-static-files.min.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="js/ui-bootstrap-tpls-0.12.1.min.js"></script>
+
+	<script src="js/angular-app.js"></script>
+
+</body>
+</html>

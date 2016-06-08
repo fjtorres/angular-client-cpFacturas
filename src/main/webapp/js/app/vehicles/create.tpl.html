@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="title">
+            <h1>{{'vehicles.view.create' | translate}}</h1>
+            <hr/>
+        </div>
+    </div>
+</div>
+
+<form class="form-horizontal" role="form" data-ng-submit="ctrl.onSaveSubmit()">
+    <div data-ng-include="'js/app/vehicles/form.tpl.html'"></div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="btn-group pull-right btn-toolbar">
+                <button type="submit" class="btn btn-success" title="{{'vehicles.buttons.save' | translate}}" tabindex="8">{{'buttons.save' | translate}}</button>
+                <button type="reset" class="btn btn-primary" title="{{'buttons.clear.title' | translate}}" tabindex="9">{{'buttons.clear' | translate}}</button>
+                <a href="#/vehicles" class="btn btn-primary" title="{{'buttons.back.title' | translate}}" tabindex="10">{{'buttons.back' | translate}}</a>
+            </div>
+        </div>
+    </div>
+</form>

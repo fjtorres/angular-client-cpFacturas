@@ -1,0 +1,119 @@
+<div class="row">
+    
+    <div class="col-sm-6" data-ng-show="ctrl.entity.vehicle.id == null">
+    
+    	<div class="form-group">
+            <label for="txtInvoiceVehicle" class="control-label col-sm-3">{{'invoices.field.vehicle' | translate}}</label>
+            <div class="col-sm-5">
+            	<div class="input-group">
+	                <input autocomplete='off' type="text" class="form-control" id="txtInvoiceVehicle" placeholder="{{'invoices.field.vehicle.placeholder' | translate}}"
+	                    maxlength="25" data-ng-model="ctrl.vehicleAutocomplete" data-ng-disabled="isUpdate" tabindex="1"
+	                    data-typeahead="item as item.registration + ' (' + item.model.brand.name + ' - ' + item.model.name + ')' for item in ctrl.getVehicles($viewValue)"
+	                    data-typeahead-min-length="2"
+	                    data-typeahead-loading="loadingVehicles"
+	                    data-typeahead-on-select="ctrl.onSelectVehicle($item, $model, $label)" />
+	                <span class="input-group-addon" data-ng-show="loadingVehicles"><i class="glyphicon glyphicon-refresh"></i></span>
+	                <span class="input-group-addon" data-ng-show="!loadingVehicles"><i class="fa fa-plus"></i></span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Vehicle panel -->
+	<div class="col-sm-12 col-md-4" data-ng-show="ctrl.entity.vehicle.id != null" data-ng-include="'js/app/invoices/vehicleDetail.tpl.html'"></div>
+    
+    <!-- Customer panel -->
+	<div class="col-sm-12 col-md-4" data-ng-show="ctrl.entity.vehicle.id != null && ctrl.entity.vehicle.customer != null" data-ng-include="'js/app/invoices/customerDetail.tpl.html'"></div>
+		
+	<!-- Insurer panel -->
+	<div class="col-sm-12 col-md-4" data-ng-show="ctrl.entity.vehicle.id != null && ctrl.entity.vehicle.insurer != null" data-ng-include="'js/app/invoices/insurerDetail.tpl.html'"></div>
+	
+</div>
+
+<div class="row" data-ng-show="ctrl.entity.vehicle.id != null">
+	<div class="col-sm-12 col-md-4">
+		<div class="form-group">
+			<label for="txtObservations" class="control-label col-sm-3">{{'invoices.field.observations' | translate}}</label>
+			<div class="col-sm-9">
+				<textarea id="txtObservations" data-ng-model="ctrl.entity.observations" class="form-control" maxlength="500" rows="4" cols="75"></textarea>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Table buttons -->
+<div class="row">
+	<div class="col-sm-12">
+        <div class="btn-group pull-right btn-toolbar" role="group">
+        	<button data-ng-show="ctrl.entity.vehicle.id != null" type="button" class="btn btn-danger btn-sm" 
+        		title="{{'invoices.buttons.selectVehicle' | translate}}" tabindex="1"
+        		data-ng-click="ctrl.onClearVehicleClick()">{{'invoices.buttons.selectVehicle' | translate}}</button>
+        	
+            <a href="#" onclick="return false;" class="btn btn-default btn-sm" title="{{'invoices.buttons.add.line' | translate}}" data-ng-click="ctrl.linesGrid.onNewLineClick()" tabindex="2">
+                <i class="fa fa-plus"></i>
+            </a>
+            
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    
+    <div class="col-sm-12">
+
+        <div class="table-responsive">
+            
+            <table class="table table-striped table-bordered table-hover" id="invoice-lines-list">
+                <thead>
+                	<tr>
+	                    <th>{{'invocesLine.field.description' | translate}}</th>
+	                    <th style="width: 80px;">{{'invocesLine.field.amount' | translate}}</th>
+	                    <th style="width: 65px;">{{'invocesLine.field.price' | translate}}</th>
+	                    <th style="width: 95px;">{{'invocesLine.field.discount' | translate}}</th>
+	                    <th style="width: 90px;"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                   <tr data-ng-repeat="item in ctrl.entity.lines">
+                        <td>{{item.description}}</td>
+                        <td>{{item.amount | number: 2}}</td>
+                        <td>{{item.price | number: 2}}</td>
+                        <td>{{item.discount | number: 2}} %</td>
+						<td>
+                            <div class="text-center">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-primary btn-xs" title="" data-ng-click="ctrl.linesGrid.onUpdateLineClick(item)" onclick="return false;"><i class="fa fa-pencil"></i></a>
+                                    <a href="#" class="btn btn-danger btn-xs" title="" data-ng-click="ctrl.linesGrid.onConfirmDeleteClick(item)" onclick="return false;"><i class="fa fa-remove"></i></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+        
+        <div class="total-separator pull-right" data-ng-show="ctrl.entity.lines.length">
+        	<table class="table table-bordered" style="width:330px;">
+        		<thead>
+                	<tr class="active">
+                		<th style="width: 80px;">{{'messages.cost' | translate}}</th>
+                		<th style="width: 65px;">{{'messages.taxRate' | translate}}</th>
+                		<th style="width: 95px;">{{'messages.totalWithTax' | translate}}</th>
+                		<th style="width: 90px;">{{'messages.total' | translate}}</th>
+                	</tr>
+                </thead>
+            	<tbody>
+					<tr>
+                    	<td>{{ctrl.utils.total2(ctrl.entity.lines, false, false, ctrl.entity.taxRate) | number: 2}}</td>
+                    	<td>{{ctrl.entity.taxRate}} %</td>
+                    	<td>{{ctrl.utils.total2(ctrl.entity.lines, false, true, ctrl.entity.taxRate) | number: 2}}</td>
+                    	<td>{{ctrl.utils.total2(ctrl.entity.lines, true, false, ctrl.entity.taxRate) | number: 2}}</td>
+                    </tr>
+            	</tbody>
+            </table>
+        </div>
+    </div>
+    
+</div>

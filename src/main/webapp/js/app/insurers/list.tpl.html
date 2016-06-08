@@ -1,0 +1,56 @@
+<div class="row">
+	<div class="col-sm-12">
+        <div class="title">
+            <h1>{{'insurers.view.list' | translate}}</h1>
+            <hr/>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="btn-group pull-right btn-toolbar" role="group">
+            <a href="#/insurers/create" class="btn btn-default btn-sm" title="{{'insurers.buttons.add' | translate}}">
+                <i class="fa fa-plus"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover" id="insurer-list">
+                <thead>
+                	<tr>
+	                    <th>{{'insurers.field.code' | translate}} <span class="dropup"><span class="caret"></span></span></th>
+	                    <th>{{'insurers.field.name' | translate}} <span class="caret"></span></th>
+	                    <th>{{'messages.email' | translate}} <span class="caret"></span></th>
+	                    <th style="width: 90px;"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                   <tr data-ng-repeat="item in ctrl.items">
+                        <td>{{item.code}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.contactData.email}}</td>
+						<td>
+                            <div class="text-center">
+                                <div class="btn-group">
+                                    <a href="#/insurers/update/{{item.id}}" class="btn btn-primary btn-xs" title="{{'insurers.buttons.update' | translate}}"><i class="fa fa-pencil"></i></a>
+                                    <a href="#" class="btn btn-danger btn-xs" title="{{'insurers.buttons.delete' | translate}}" data-ng-click="ctrl.onConfirmDeleteClick(item)" onclick="return false;"><i class="fa fa-remove"></i></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-ng-if="!ctrl.items.length">
+                    	<td colspan="7">{{'messages.empty.result' | translate}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <pagination total-items="ctrl.totalItems" ng-model="ctrl.currentPage" items-per-page="ctrl.itemsPerPage" ng-change="ctrl.onPageChanged()" 
+            boundary-links="true" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" />
+    </div>
+</div>
