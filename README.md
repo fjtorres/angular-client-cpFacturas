@@ -1,4 +1,3 @@
-
 ## C&P Facturas
 
 This project is a frontend application for invoicing system C&P Facturas.
@@ -16,3 +15,4 @@ Full sample project with Java EE 7 and Angular JS
 
 ### View templates
 * All templates should use the syntax "controller as" to access functions or variables from controller.
+
