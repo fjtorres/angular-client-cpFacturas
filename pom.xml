@@ -35,7 +35,7 @@
 		<profile>
 			<id>openshift</id>			
 			<properties>
-				<server.url>http://localhost:8080/cpFacturasServer/api</server.url>
+				<server.url>http://cpfacturasdb-fjtorres.rhcloud.com/api</server.url>
 			</properties>
 		</profile>
 	</profiles>
