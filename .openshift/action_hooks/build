@@ -2,4 +2,4 @@
 
 cd $OPENSHIFT_REPO_DIR
 
-mvn clean install -Popenshift -DskipTests=true >> build.log
+mvn clean install -s .openshift/settings.xml -Popenshift -DskipTests=true >> build.log
